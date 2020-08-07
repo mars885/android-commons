@@ -1,0 +1,27 @@
+ext {
+    gradleVersion = "4.0.1"
+    kotlinVersion = "1.3.72"
+
+    constraintLayoutVersion = "1.1.3"
+    appCompatVersion = "1.1.0"
+    roomVersion = "2.2.3"
+    ktxVersion = "1.3.1"
+    recyclerViewVersion = "1.1.0"
+
+    junitVersion = "4.13"
+    junitExtVersion = "1.1.1"
+    espressoVersion = "3.2.0"
+
+    deps = [
+        androidGradlePlugin: "com.android.tools.build:gradle:$gradleVersion",
+        kotlinGradlePlugin: "org.jetbrains.kotlin:kotlin-gradle-plugin:$kotlinVersion",
+        kotlinStdLib: "org.jetbrains.kotlin:kotlin-stdlib-jdk7:$kotlinVersion",
+        appCompat: "androidx.appcompat:appcompat:$appCompatVersion",
+        constraintLayout: "androidx.constraintlayout:constraintlayout:$constraintLayoutVersion",
+        coreKtx: "androidx.core:core-ktx:$ktxVersion",
+        recyclerView: "androidx.recyclerview:recyclerview:$recyclerViewVersion",
+        jUnit: "junit:junit:$junitVersion",
+        jUnitExt: "androidx.test.ext:junit:$junitExtVersion",
+        espressoCore: "androidx.test.espresso:espresso-core:$espressoVersion"
+    ]
+}

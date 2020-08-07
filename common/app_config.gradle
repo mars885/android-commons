@@ -1,0 +1,13 @@
+ext {
+    appConfig = [
+        compileSdkVersion: 29,
+        targetSdkVersion: 29,
+        minSdkVersion: 21,
+        buildToolsVersion: "29.0.2",
+        applicationId: "com.paulrybitskyi.sample",
+        versionCode: 1,
+        versionName: "1.0.0",
+        javaCompatibilityVersion: JavaVersion.VERSION_1_8,
+        kotlinCompatibilityVersion: JavaVersion.VERSION_1_8
+    ]
+}
