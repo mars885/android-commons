@@ -8,6 +8,7 @@ ext {
     ktxVersion = "1.3.1"
     recyclerViewVersion = "1.1.0"
     materialComponentsVersion = "1.2.0"
+    navigationVersion = "2.3.0"
 
     junitVersion = "4.13"
     junitExtVersion = "1.1.1"
@@ -24,6 +25,7 @@ ext {
         jUnit: "junit:junit:$junitVersion",
         jUnitExt: "androidx.test.ext:junit:$junitExtVersion",
         espressoCore: "androidx.test.espresso:espresso-core:$espressoVersion",
-        materialComponents: "com.google.android.material:material:$materialComponentsVersion"
+        materialComponents: "com.google.android.material:material:$materialComponentsVersion",
+        navigation: "androidx.navigation:navigation-fragment-ktx:$navigationVersion"
     ]
 }
