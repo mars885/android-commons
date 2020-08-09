@@ -3,3 +3,4 @@ rootProject.name = "AndroidCommons"
 include ':app'
 include ':commons'
 include ':commons-ktx'
+include ':commons-window-anims'

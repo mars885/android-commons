@@ -1,0 +1,66 @@
+<?xml version="1.0" encoding="utf-8"?>
+
+<!--
+  ~ Copyright 2020 Paul Rybitskyi, paul.rybitskyi.work@gmail.com
+  ~
+  ~ Licensed under the Apache License, Version 2.0 (the "License");
+  ~ you may not use this file except in compliance with the License.
+  ~ You may obtain a copy of the License at
+  ~
+  ~     http://www.apache.org/licenses/LICENSE-2.0
+  ~
+  ~ Unless required by applicable law or agreed to in writing, software
+  ~ distributed under the License is distributed on an "AS IS" BASIS,
+  ~ WITHOUT WARRANTIES OR CONDITIONS OF ANY KIND, either express or implied.
+  ~ See the License for the specific language governing permissions and
+  ~ limitations under the License.
+-->
+
+<resources>
+
+    <integer name="default_window_animation_duration">300</integer>
+
+    <!-- Fading Window Animations -->
+    <integer name="fading_animation_duration">250</integer>
+
+    <!-- Kitkat Scaling Window Animations -->
+    <item name="kitkat_scaling_window_a_animation_min_scale" type="integer" format="float">1.0</item>
+    <item name="kitkat_scaling_window_a_animation_max_scale" type="integer" format="float">1.2</item>
+    <item name="kitkat_scaling_window_b_animation_min_scale" type="integer" format="float">0.8</item>
+    <item name="kitkat_scaling_window_b_animation_max_scale" type="integer" format="float">1.0</item>
+
+    <item name="kitkat_scaling_animation_min_alpha" type="integer" format="float">0.0</item>
+    <item name="kitkat_scaling_animation_max_alpha" type="integer" format="float">1.0</item>
+
+    <integer name="kitkat_scaling_animation_duration">200</integer>
+
+    <!-- Horizontal Sliding Window Animations -->
+    <item name="horizontal_sliding_animation_window_a_min_alpha" type="integer" format="float">0.80</item>
+    <item name="horizontal_sliding_animation_window_a_max_alpha" type="integer" format="float">1.0</item>
+
+    <integer name="horizontal_sliding_animation_duration">@integer/default_window_animation_duration</integer>
+
+    <!-- Vertical Sliding Window Animations -->
+    <item name="vertical_sliding_window_a_alpha" type="integer" format="float">1.0</item>
+
+    <integer name="vertical_sliding_animation_duration">@integer/default_window_animation_duration</integer>
+
+    <!-- Overshoot Scaling Window Animations -->
+    <item name="overshoot_scaling_window_a_min_scale" type="integer" format="float">0.9</item>
+    <item name="overshoot_scaling_window_a_max_scale" type="integer" format="float">1.0</item>
+    <item name="overshoot_scaling_window_b_min_scale" type="integer" format="float">1.0</item>
+    <item name="overshoot_scaling_window_b_max_scale" type="integer" format="float">1.1</item>
+
+    <item name="overshoot_scaling_window_a_min_alpha" type="integer" format="float">0.9</item>
+    <item name="overshoot_scaling_window_a_max_alpha" type="integer" format="float">1.0</item>
+
+    <item name="overshoot_scaling_window_b_enter_min_alpha" type="integer" format="float">0.9</item>
+    <item name="overshoot_scaling_window_b_enter_max_alpha" type="integer" format="float">1.0</item>
+
+    <item name="overshoot_scaling_window_b_exit_min_alpha" type="integer" format="float">0.0</item>
+    <item name="overshoot_scaling_window_b_exit_max_alpha" type="integer" format="float">1.0</item>
+
+    <integer name="overshoot_scaling_animation_scale_element_duration">300</integer>
+    <integer name="overshoot_scaling_animation_alpha_element_duration">100</integer>
+
+</resources>
