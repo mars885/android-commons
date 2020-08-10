@@ -14,32 +14,13 @@
  * limitations under the License.
  */
 
-// Top-level build file where you can add configuration options common to all sub-projects/modules.
-buildscript {
-    apply from: "common/app_config.gradle"
-    apply from: "common/dependencies.gradle"
-    ext {
-        kotlin_version = '1.3.72'
-    }
+package com.paulrybitskyi.commons.device.info.model.screen
 
-    repositories {
-        google()
-        jcenter()
-    }
-
-    dependencies {
-        classpath deps.androidGradlePlugin
-        classpath deps.kotlinGradlePlugin
-    }
-}
-
-allprojects {
-    repositories {
-        google()
-        jcenter()
-    }
-}
-
-task clean(type: Delete) {
-    delete rootProject.buildDir
-}
+data class ScreenMetrics(
+    val width: ScreenDimension,
+    val height: ScreenDimension,
+    val sizeCategory: ScreenSizeCategory,
+    val density: ScreenDensity,
+    val scalingFactors: ScreenScalingFactors,
+    val smallestWidthInDp: Int
+)

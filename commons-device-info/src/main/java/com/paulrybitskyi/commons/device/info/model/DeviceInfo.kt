@@ -14,32 +14,11 @@
  * limitations under the License.
  */
 
-// Top-level build file where you can add configuration options common to all sub-projects/modules.
-buildscript {
-    apply from: "common/app_config.gradle"
-    apply from: "common/dependencies.gradle"
-    ext {
-        kotlin_version = '1.3.72'
-    }
+package com.paulrybitskyi.commons.device.info.model
 
-    repositories {
-        google()
-        jcenter()
-    }
+import com.paulrybitskyi.commons.device.info.model.screen.ScreenMetrics
 
-    dependencies {
-        classpath deps.androidGradlePlugin
-        classpath deps.kotlinGradlePlugin
-    }
-}
-
-allprojects {
-    repositories {
-        google()
-        jcenter()
-    }
-}
-
-task clean(type: Delete) {
-    delete rootProject.buildDir
-}
+data class DeviceInfo(
+    val productInfo: ProductInfo,
+    val screenMetrics: ScreenMetrics
+)

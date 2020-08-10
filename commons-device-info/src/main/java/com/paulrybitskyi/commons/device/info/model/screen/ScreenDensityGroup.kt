@@ -14,32 +14,18 @@
  * limitations under the License.
  */
 
-// Top-level build file where you can add configuration options common to all sub-projects/modules.
-buildscript {
-    apply from: "common/app_config.gradle"
-    apply from: "common/dependencies.gradle"
-    ext {
-        kotlin_version = '1.3.72'
-    }
+package com.paulrybitskyi.commons.device.info.model.screen
 
-    repositories {
-        google()
-        jcenter()
-    }
+enum class ScreenDensityGroup(val title: String) {
 
-    dependencies {
-        classpath deps.androidGradlePlugin
-        classpath deps.kotlinGradlePlugin
-    }
-}
+    UNDEFINED("Undefined"),
 
-allprojects {
-    repositories {
-        google()
-        jcenter()
-    }
-}
+    LOW("Low"),
+    MEDIUM("Medium"),
+    TV("TV"),
+    HIGH("High"),
+    XHIGH("XHigh"),
+    XXHIGH("XXHigh"),
+    XXXHIGH("XXXHigh")
 
-task clean(type: Delete) {
-    delete rootProject.buildDir
 }

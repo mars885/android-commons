@@ -6,7 +6,7 @@
  * You may obtain a copy of the License at
  *
  *     http://www.apache.org/licenses/LICENSE-2.0
- *
+ *     
  * Unless required by applicable law or agreed to in writing, software
  * distributed under the License is distributed on an "AS IS" BASIS,
  * WITHOUT WARRANTIES OR CONDITIONS OF ANY KIND, either express or implied.
@@ -14,32 +14,20 @@
  * limitations under the License.
  */
 
-// Top-level build file where you can add configuration options common to all sub-projects/modules.
-buildscript {
-    apply from: "common/app_config.gradle"
-    apply from: "common/dependencies.gradle"
-    ext {
-        kotlin_version = '1.3.72'
-    }
+package com.paulrybitskyi.commons.device.info
 
-    repositories {
-        google()
-        jcenter()
-    }
+import org.junit.Test
 
-    dependencies {
-        classpath deps.androidGradlePlugin
-        classpath deps.kotlinGradlePlugin
-    }
-}
+import org.junit.Assert.*
 
-allprojects {
-    repositories {
-        google()
-        jcenter()
+/**
+ * Example local unit test, which will execute on the development machine (host).
+ *
+ * See [testing documentation](http://d.android.com/tools/testing).
+ */
+class ExampleUnitTest {
+    @Test
+    fun addition_isCorrect() {
+        assertEquals(4, 2 + 2)
     }
-}
-
-task clean(type: Delete) {
-    delete rootProject.buildDir
 }
