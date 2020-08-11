@@ -14,29 +14,14 @@
  * limitations under the License.
  */
 
-// Top-level build file where you can add configuration options common to all sub-projects/modules.
-buildscript {
-    apply from: "common/app_config.gradle"
-    apply from: "common/dependencies.gradle"
+package com.paulrybitskyi.commons.network.utils
 
-    repositories {
-        google()
-        jcenter()
-    }
+import com.paulrybitskyi.commons.network.model.NetworkType
 
-    dependencies {
-        classpath deps.androidGradlePlugin
-        classpath deps.kotlinGradlePlugin
-    }
-}
+interface NetworkListener {
 
-allprojects {
-    repositories {
-        google()
-        jcenter()
-    }
-}
+    fun onNetworkConnected(networkType: NetworkType)
 
-task clean(type: Delete) {
-    delete rootProject.buildDir
+    fun onNetworkDisconnected(networkType: NetworkType)
+
 }
