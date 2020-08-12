@@ -14,7 +14,7 @@
  * limitations under the License.
  */
 
-apply plugin: 'com.android.application'
+apply plugin: 'com.android.library'
 
 apply plugin: 'kotlin-android'
 apply plugin: 'kotlin-android-extensions'
@@ -26,11 +26,11 @@ android {
     defaultConfig {
         minSdkVersion appConfig.minSdkVersion
         targetSdkVersion appConfig.targetSdkVersion
-        applicationId appConfig.applicationId
         versionCode appConfig.versionCode
         versionName appConfig.versionName
 
         testInstrumentationRunner "androidx.test.runner.AndroidJUnitRunner"
+        consumerProguardFiles "consumer-rules.pro"
     }
 
     buildTypes {
@@ -56,11 +56,9 @@ dependencies {
     implementation deps.kotlinStdLib
     implementation deps.appCompat
     implementation deps.coreKtx
-    implementation deps.constraintLayout
 
     implementation project(":commons")
     implementation project(":commons-ktx")
-    implementation project(":commons-widgets")
 
     testImplementation deps.jUnit
 
