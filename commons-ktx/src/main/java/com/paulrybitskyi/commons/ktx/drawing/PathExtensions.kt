@@ -14,6 +14,8 @@
  * limitations under the License.
  */
 
+@file:JvmName("PathUtils")
+
 package com.paulrybitskyi.commons.ktx.drawing
 
 import android.graphics.Path

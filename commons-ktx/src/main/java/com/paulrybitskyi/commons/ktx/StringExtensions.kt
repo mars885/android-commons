@@ -19,9 +19,6 @@
 package com.paulrybitskyi.commons.ktx
 
 import android.graphics.Color
-import com.paulrybitskyi.commons.utils.hashHmacSha256
-import com.paulrybitskyi.commons.utils.hashMD5
-import com.paulrybitskyi.commons.utils.hashSha1
 import java.util.*
 
 
@@ -66,12 +63,3 @@ fun String.capitalize(locale: Locale): String {
 
     return substring(0, 1).toUpperCase(locale) + substring(1)
 }
-
-
-fun String.toSha1(): String = hashSha1(this)
-
-
-fun String.toHmacSha256(secret: String): String = hashHmacSha256(secret, this)
-
-
-fun String.toMd5(): String = hashMD5(this)

@@ -14,6 +14,8 @@
  * limitations under the License.
  */
 
+@file:JvmName("WindowInsetsUtils")
+
 package com.paulrybitskyi.commons.ktx
 
 import android.view.View

@@ -119,7 +119,9 @@ enum class ScreenDensity(
 
     companion object {
 
-        fun Int.asScreenDensity(): ScreenDensity {
+        @JvmName("forDpi")
+        @JvmStatic
+        internal fun Int.asScreenDensity(): ScreenDensity {
             return values().find { it.dpi == this }
                 ?: UNDEFINED
         }

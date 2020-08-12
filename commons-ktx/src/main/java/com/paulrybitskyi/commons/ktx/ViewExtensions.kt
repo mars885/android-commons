@@ -436,6 +436,6 @@ fun <T> View.invalidateOnChange(initialValue: T): ReadWriteProperty<Any, T> {
 }
 
 
-fun <T> View.relayoutOnChange(initialValue: T) : ReadWriteProperty<Any, T> {
+fun <T> View.relayoutOnChange(initialValue: T): ReadWriteProperty<Any, T> {
     return observeChanges(initialValue) {  _, _ -> requestLayout() }
 }

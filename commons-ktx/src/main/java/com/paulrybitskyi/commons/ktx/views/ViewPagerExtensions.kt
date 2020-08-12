@@ -14,6 +14,8 @@
  * limitations under the License.
  */
 
+@file:JvmName("ViewPagerUtils")
+
 package com.paulrybitskyi.commons.ktx.views
 
 import androidx.viewpager.widget.ViewPager

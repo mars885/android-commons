@@ -14,6 +14,8 @@
  * limitations under the License.
  */
 
+@file:JvmName("TabLayoutUtils")
+
 package com.paulrybitskyi.commons.material.utils
 
 import com.google.android.material.tabs.TabLayout

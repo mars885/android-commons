@@ -14,6 +14,8 @@
  * limitations under the License.
  */
 
+@file:JvmName("CanvasUtils")
+
 package com.paulrybitskyi.commons.ktx.drawing
 
 import android.annotation.SuppressLint

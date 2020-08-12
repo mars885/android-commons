@@ -14,6 +14,8 @@
  * limitations under the License.
  */
 
+@file:JvmName("ViewPropertyAnimatorUtils")
+
 package com.paulrybitskyi.commons.ktx
 
 import android.animation.Animator

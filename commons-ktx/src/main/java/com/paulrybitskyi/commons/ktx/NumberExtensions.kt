@@ -26,17 +26,17 @@ import androidx.annotation.FloatRange
 import kotlin.math.roundToInt
 
 
-val Int.isEven : Boolean
+val Int.isEven: Boolean
     get() = ((this and 1) == 0)
 
-val Int.isOdd : Boolean
-    get() = !this.isEven
+val Int.isOdd: Boolean
+    get() = !isEven
 
-val Long.isEven : Boolean
+val Long.isEven: Boolean
     get() = ((this and 1L) == 0L)
 
-val Long.isOdd : Boolean
-    get() = !this.isEven
+val Long.isOdd: Boolean
+    get() = !isEven
 
 
 fun Int.dpToPx(context: Context): Int {

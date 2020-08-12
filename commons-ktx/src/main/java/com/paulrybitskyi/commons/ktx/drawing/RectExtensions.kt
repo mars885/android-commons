@@ -14,22 +14,24 @@
  * limitations under the License.
  */
 
+@file:JvmName("RectUtils")
+
 package com.paulrybitskyi.commons.ktx.drawing
 
 import android.graphics.Rect
 import android.graphics.RectF
 
 
-val Rect.halfWidth : Int
+val Rect.halfWidth: Int
     get() = (width() / 2)
 
-val Rect.halfHeight : Int
+val Rect.halfHeight: Int
     get() = (height() / 2)
 
-val RectF.halfWidth : Float
+val RectF.halfWidth: Float
     get() = (width() * 0.5f)
 
-val RectF.halfHeight : Float
+val RectF.halfHeight: Float
     get() = (height() * 0.5f)
 
 

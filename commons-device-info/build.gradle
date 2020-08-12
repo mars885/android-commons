@@ -53,8 +53,6 @@ android {
 dependencies {
     implementation fileTree(dir: "libs", include: ["*.jar"])
 
-    implementation deps.kotlinStdLib
-
     implementation project(":commons-ktx")
 
     testImplementation deps.jUnit

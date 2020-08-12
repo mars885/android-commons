@@ -14,6 +14,8 @@
  * limitations under the License.
  */
 
+@file:JvmName("NavControllerUtils")
+
 package com.paulrybitskyi.commons.navigation
 
 import android.os.Bundle

@@ -14,6 +14,8 @@
  * limitations under the License.
  */
 
+@file:JvmName("ActivityUtils")
+
 package com.paulrybitskyi.commons.window.anims
 
 import android.app.Activity

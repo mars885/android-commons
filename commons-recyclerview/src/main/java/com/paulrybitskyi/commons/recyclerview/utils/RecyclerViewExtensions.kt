@@ -14,6 +14,8 @@
  * limitations under the License.
  */
 
+@file:JvmName("RecyclerViewUtils")
+
 package com.paulrybitskyi.commons.recyclerview.utils
 
 import androidx.recyclerview.widget.DefaultItemAnimator

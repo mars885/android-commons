@@ -53,13 +53,17 @@ android {
 dependencies {
     implementation fileTree(dir: "libs", include: ["*.jar"])
 
-    implementation deps.kotlinStdLib
     implementation deps.appCompat
-    implementation deps.coreKtx
     implementation deps.constraintLayout
 
     implementation project(":commons")
     implementation project(":commons-ktx")
+    implementation project(":commons-window-anims")
+    implementation project(":commons-recyclerview")
+    implementation project(":commons-material")
+    implementation project(":commons-navigation")
+    implementation project(":commons-device-info")
+    implementation project(":commons-network")
     implementation project(":commons-widgets")
 
     testImplementation deps.jUnit

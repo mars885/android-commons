@@ -14,6 +14,8 @@
  * limitations under the License.
  */
 
+@file:JvmName("ContextUtils")
+
 package com.paulrybitskyi.commons.network
 
 import android.Manifest

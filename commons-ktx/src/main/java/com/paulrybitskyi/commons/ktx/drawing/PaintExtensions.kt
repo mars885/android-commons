@@ -14,6 +14,8 @@
  * limitations under the License.
  */
 
+@file:JvmName("PaintUtils")
+
 package com.paulrybitskyi.commons.ktx.drawing
 
 import android.graphics.Paint

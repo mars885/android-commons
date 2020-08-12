@@ -48,7 +48,9 @@ enum class ScreenSizeCategory(
 
     companion object {
 
-        fun Int.asScreenSizeCategory(): ScreenSizeCategory {
+        @JvmName("forLayoutSize")
+        @JvmStatic
+        internal fun Int.asScreenSizeCategory(): ScreenSizeCategory {
             return values().find { it.layoutSize == this }
                 ?: UNDEFINED
         }

@@ -14,6 +14,8 @@
  * limitations under the License.
  */
 
+@file:JvmName("CardViewUtils")
+
 package com.paulrybitskyi.commons.material.utils
 
 import androidx.annotation.ColorInt
