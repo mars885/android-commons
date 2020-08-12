@@ -14,9 +14,9 @@
  * limitations under the License.
  */
 
-package com.paulrybitskyi.commons.utils.listeners
+package com.paulrybitskyi.commons.listeners
 
-import com.paulrybitskyi.commons.utils.listeners.adapters.TextWatcherAdapter
+import com.paulrybitskyi.commons.listeners.adapters.TextWatcherAdapter
 
 /**
  * An implementation of the TextWatcher listener that provides

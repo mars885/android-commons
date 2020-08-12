@@ -14,7 +14,7 @@
  * limitations under the License.
  */
 
-package com.paulrybitskyi.commons.utils.listeners.adapters
+package com.paulrybitskyi.commons.listeners.adapters
 
 import android.app.Activity
 import android.app.Application

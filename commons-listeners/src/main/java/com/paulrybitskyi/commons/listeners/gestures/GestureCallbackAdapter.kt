@@ -14,7 +14,7 @@
  * limitations under the License.
  */
 
-package com.paulrybitskyi.commons.utils.listeners.gestures
+package com.paulrybitskyi.commons.listeners.gestures
 
 import android.view.MotionEvent
 

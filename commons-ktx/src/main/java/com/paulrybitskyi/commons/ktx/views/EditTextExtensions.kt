@@ -24,7 +24,6 @@ import android.widget.EditText
 import android.widget.TextView
 import androidx.core.widget.doOnTextChanged
 import com.paulrybitskyi.commons.SdkInfo
-import com.paulrybitskyi.commons.utils.listeners.QueryListener
 
 
 val EditText.isEmpty: Boolean
@@ -80,19 +79,4 @@ inline fun EditText.onTextChanged(crossinline callback: (String) -> Unit): TextW
     return doOnTextChanged { text, _, _, _ ->
         callback(text.toString())
     }
-}
-
-
-inline fun EditText.addQueryListener(
-    crossinline onQueryEntered: (String) -> Unit = {},
-    crossinline onQueryRemoved: () -> Unit = {}
-): TextWatcher {
-    val callback = object : QueryListener.Callback {
-
-        override fun onQueryEntered(query: String) = onQueryEntered(query)
-        override fun onQueryRemoved() = onQueryRemoved()
-
-    }
-
-    return QueryListener(callback)
 }

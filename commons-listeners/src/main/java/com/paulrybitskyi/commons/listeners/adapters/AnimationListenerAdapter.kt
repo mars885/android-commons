@@ -14,17 +14,16 @@
  * limitations under the License.
  */
 
-package com.paulrybitskyi.commons.utils.listeners.adapters
+package com.paulrybitskyi.commons.listeners.adapters
 
-import android.text.Editable
-import android.text.TextWatcher
+import android.view.animation.Animation
 
-interface TextWatcherAdapter : TextWatcher {
+interface AnimationListenerAdapter : Animation.AnimationListener {
 
-    override fun beforeTextChanged(text: CharSequence, start: Int, count: Int, after: Int) {}
+    override fun onAnimationStart(animation: Animation) {}
 
-    override fun onTextChanged(text: CharSequence, start: Int, before: Int, count: Int) {}
+    override fun onAnimationRepeat(animation: Animation) {}
 
-    override fun afterTextChanged(editable: Editable) {}
+    override fun onAnimationEnd(animation: Animation) {}
 
 }
