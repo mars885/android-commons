@@ -15,9 +15,10 @@
  */
 
 apply plugin: 'com.android.library'
-
 apply plugin: 'kotlin-android'
 apply plugin: 'kotlin-android-extensions'
+
+apply from: 'library_config.gradle'
 
 android {
     compileSdkVersion appConfig.compileSdkVersion
@@ -26,8 +27,8 @@ android {
     defaultConfig {
         minSdkVersion appConfig.minSdkVersion
         targetSdkVersion appConfig.targetSdkVersion
-        versionCode appConfig.versionCode
-        versionName appConfig.versionName
+        versionCode libraryConfig.versionCode
+        versionName libraryConfig.versionName
 
         testInstrumentationRunner "androidx.test.runner.AndroidJUnitRunner"
         consumerProguardFiles "consumer-rules.pro"
@@ -63,3 +64,12 @@ dependencies {
     androidTestImplementation deps.jUnitExt
     androidTestImplementation deps.espressoCore
 }
+
+ext {
+    publishingConfig.releaseArtifact = libraryConfig.artifactName
+    publishingConfig.releaseVersion = libraryConfig.versionName
+}
+
+project.archivesBaseName = publishingConfig.releaseArtifact
+
+apply from: "../gradle/scripts/publish.gradle"

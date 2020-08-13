@@ -24,9 +24,9 @@ android {
     buildToolsVersion appConfig.buildToolsVersion
 
     defaultConfig {
+        applicationId appConfig.applicationId
         minSdkVersion appConfig.minSdkVersion
         targetSdkVersion appConfig.targetSdkVersion
-        applicationId appConfig.applicationId
         versionCode appConfig.versionCode
         versionName appConfig.versionName
 
