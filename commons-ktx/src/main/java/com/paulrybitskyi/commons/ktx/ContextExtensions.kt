@@ -23,6 +23,7 @@ import android.content.Context
 import android.content.Intent
 import android.content.pm.PackageManager
 import android.content.res.Configuration
+import android.graphics.Typeface
 import android.graphics.drawable.Drawable
 import android.graphics.drawable.GradientDrawable
 import android.util.DisplayMetrics
@@ -35,6 +36,7 @@ import androidx.annotation.*
 import androidx.appcompat.content.res.AppCompatResources
 import androidx.core.app.NotificationManagerCompat
 import androidx.core.content.ContextCompat
+import androidx.core.content.res.ResourcesCompat
 import androidx.core.content.res.use
 import androidx.core.hardware.fingerprint.FingerprintManagerCompat
 import com.paulrybitskyi.commons.SdkInfo
@@ -116,6 +118,11 @@ fun Context.getDimensionPixelSize(@DimenRes dimenId: Int): Int {
 
 fun Context.getDimension(@DimenRes dimenId: Int): Float {
     return resources.getDimension(dimenId)
+}
+
+
+fun Context.getFont(@FontRes fontId: Int): Typeface? {
+    return ResourcesCompat.getFont(this, fontId)
 }
 
 

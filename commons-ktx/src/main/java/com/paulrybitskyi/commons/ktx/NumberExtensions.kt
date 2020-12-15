@@ -38,6 +38,15 @@ val Long.isEven: Boolean
 val Long.isOdd: Boolean
     get() = !isEven
 
+val Int.isOpaque: Boolean
+    get() = (Color.alpha(this) == 255)
+
+val Int.isTransparent: Boolean
+    get() = (Color.alpha(this) == 0)
+
+val Int.isTranslucent: Boolean
+    get() = (Color.alpha(this) in 2..254)
+
 
 fun Int.dpToPx(context: Context): Int {
     return toFloat().dpToPx(context).roundToInt()

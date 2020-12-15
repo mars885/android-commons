@@ -33,12 +33,10 @@ import kotlin.properties.ReadWriteProperty
 val View.hasLayoutParams: Boolean
     get() = (layoutParams != null)
 
-@get:Px
 var View.layoutParamsWidth: Int
     set(value) { setLayoutParamsSize(width = value) }
     get() = (layoutParams?.width ?: 0)
 
-@get:Px
 var View.layoutParamsHeight: Int
     set(value) { setLayoutParamsSize(height = value) }
     get() = (layoutParams?.height ?: 0)
@@ -100,14 +98,14 @@ val View.verticalPadding: Int
     get() = (topPadding + bottomPadding)
 
 
-fun View.setLayoutParamsSize(@Px size: Int) {
+fun View.setLayoutParamsSize(size: Int) {
     setLayoutParamsSize(width = size, height = size)
 }
 
 
 fun View.setLayoutParamsSize(
-    @Px width: Int = layoutParamsWidth,
-    @Px height: Int = layoutParamsHeight
+    width: Int = layoutParamsWidth,
+    height: Int = layoutParamsHeight
 ) {
     if(!hasLayoutParams) return
 

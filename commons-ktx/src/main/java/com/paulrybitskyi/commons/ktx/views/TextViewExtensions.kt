@@ -131,6 +131,15 @@ fun TextView.setMultilineTextEnabled(isMultilineTextEnabled: Boolean) {
 }
 
 
+fun TextView.setSingleLineTextEnabled(isSingleLineTextEnabled: Boolean) {
+    if(isSingleLineTextEnabled) {
+        disableMultilineText()
+    } else {
+        enableMultilineText()
+    }
+}
+
+
 fun TextView.setTextSizeInPx(size: Float) {
     setTextSize(TypedValue.COMPLEX_UNIT_PX, size)
 }
@@ -143,6 +152,20 @@ fun TextView.setTextSizeInSp(size: Float) {
 
 fun TextView.setFontFamily(fontFamily: String) {
     typeface = Typeface.create(fontFamily, Typeface.NORMAL)
+}
+
+
+/**
+ * Checks whether the text is ellipsized. Should only be called after
+ * layout phase is finished. Otherwise returns false.
+ */
+fun TextView.isTextEllipsized(): Boolean {
+    if(layout == null) return false
+
+    val textLayout = checkNotNull(layout)
+    val lineCount = textLayout.lineCount
+
+    return ((lineCount > 0) && (textLayout.getEllipsisCount(lineCount - 1) > 0))
 }
 
 
