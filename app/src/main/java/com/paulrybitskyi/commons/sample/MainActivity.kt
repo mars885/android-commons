@@ -14,7 +14,7 @@
  * limitations under the License.
  */
 
-package com.paulrybitskyi.sample
+package com.paulrybitskyi.commons.sample
 
 import androidx.appcompat.app.AppCompatActivity
 
