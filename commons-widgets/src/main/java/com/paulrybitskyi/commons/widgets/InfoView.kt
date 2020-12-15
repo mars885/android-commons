@@ -19,6 +19,7 @@ package com.paulrybitskyi.commons.widgets
 import android.content.Context
 import android.graphics.Typeface
 import android.graphics.drawable.Drawable
+import android.text.TextUtils
 import android.util.AttributeSet
 import android.view.Gravity
 import android.widget.LinearLayout
@@ -26,8 +27,9 @@ import androidx.annotation.ColorInt
 import androidx.core.content.withStyledAttributes
 import androidx.core.view.isVisible
 import com.paulrybitskyi.commons.ktx.*
+import com.paulrybitskyi.commons.ktx.views.setSingleLineTextEnabled
 import com.paulrybitskyi.commons.ktx.views.setTextSizeInPx
-import kotlinx.android.synthetic.main.view_info.view.*
+import com.paulrybitskyi.commons.widgets.databinding.ViewInfoBinding
 
 class InfoView @JvmOverloads constructor(
     context: Context,
@@ -36,23 +38,39 @@ class InfoView @JvmOverloads constructor(
 ) : LinearLayout(context, attrs, defStyleAttr) {
 
 
+    private val binding = ViewInfoBinding.inflate(context.layoutInflater, this)
+
+    var isTitleTextOneLiner: Boolean = false
+        set(value) {
+            field = value
+            binding.titleTv.setSingleLineTextEnabled(value)
+            binding.titleTv.ellipsize = TextUtils.TruncateAt.END
+        }
+
+    var isDescriptionTextOneLiner: Boolean = false
+        set(value) {
+            field = value
+            binding.descriptionTv.setSingleLineTextEnabled(value)
+            binding.descriptionTv.ellipsize = TextUtils.TruncateAt.END
+        }
+
     var isDescriptionTextVisible: Boolean
-        set(value) { descriptionTv.isVisible = value }
-        get() = descriptionTv.isVisible
+        set(value) { binding.descriptionTv.isVisible = value }
+        get() = binding.descriptionTv.isVisible
 
     var iconSize: Int = getDimensionPixelSize(R.dimen.info_view_icon_size)
         set(value) {
             field = value
-            iconIv.setLayoutParamsSize(value)
+            binding.iconIv.setLayoutParamsSize(value)
         }
 
     var titleTextTopMargin: Int
-        set(value) { titleTv.topMargin = value }
-        get() = titleTv.topMargin
+        set(value) { binding.titleTv.topMargin = value }
+        get() = binding.titleTv.topMargin
 
     var descriptionTextTopMargin: Int
-        set(value) { descriptionTv.topMargin = value }
-        get() = descriptionTv.topMargin
+        set(value) { binding.descriptionTv.topMargin = value }
+        get() = binding.descriptionTv.topMargin
 
     @get:ColorInt
     var iconColor: Int = getColor(R.color.info_view_icon_color)
@@ -63,62 +81,51 @@ class InfoView @JvmOverloads constructor(
 
     @get:ColorInt
     var titleTextColor: Int
-        set(@ColorInt value) { titleTv.setTextColor(value) }
-        get() = titleTv.currentTextColor
+        set(@ColorInt value) { binding.titleTv.setTextColor(value) }
+        get() = binding.titleTv.currentTextColor
 
     @get:ColorInt
     var descriptionTextColor: Int
-        set(@ColorInt value) { descriptionTv.setTextColor(value) }
-        get() = descriptionTv.currentTextColor
+        set(@ColorInt value) { binding.descriptionTv.setTextColor(value) }
+        get() = binding.descriptionTv.currentTextColor
 
     var titleTextSize: Float
-        set(value) { titleTv.setTextSizeInPx(value) }
-        get() = titleTv.textSize
+        set(value) { binding.titleTv.setTextSizeInPx(value) }
+        get() = binding.titleTv.textSize
 
     var descriptionTextSize: Float
-        set(value) { descriptionTv.setTextSizeInPx(value) }
-        get() = descriptionTv.textSize
+        set(value) { binding.descriptionTv.setTextSizeInPx(value) }
+        get() = binding.descriptionTv.textSize
 
     var titleTextTypeface: Typeface
-        set(value) { titleTv.typeface = value }
-        get() = titleTv.typeface
+        set(value) { binding.titleTv.typeface = value }
+        get() = binding.titleTv.typeface
 
     var descriptionTextTypeface: Typeface
-        set(value) { descriptionTv.typeface = value }
-        get() = descriptionTv.typeface
+        set(value) { binding.descriptionTv.typeface = value }
+        get() = binding.descriptionTv.typeface
 
     var titleText: CharSequence
-        set(value) { titleTv.text = value}
-        get() = titleTv.text
+        set(value) { binding.titleTv.text = value}
+        get() = binding.titleTv.text
 
     var descriptionText: CharSequence
         set(value) {
             isDescriptionTextVisible = value.isNotBlank()
-            descriptionTv.text = value
+            binding.descriptionTv.text = value
         }
-        get() = descriptionTv.text
+        get() = binding.descriptionTv.text
 
     var icon: Drawable?
-        set(value) { iconIv.setImageDrawable(value?.setColor(iconColor)) }
-        get() = iconIv.drawable
+        set(value) { binding.iconIv.setImageDrawable(value?.setColor(iconColor)) }
+        get() = binding.iconIv.drawable
 
 
     init {
         orientation = VERTICAL
         gravity = Gravity.CENTER
 
-        inflateView()
-
         attrs?.let { extractAttributes(it, defStyleAttr) }
-    }
-
-
-    private fun inflateView() {
-        inflateView(
-            layoutResourceId = R.layout.view_info,
-            root = this,
-            attachToRoot = true
-        )
     }
 
 

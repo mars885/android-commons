@@ -32,10 +32,10 @@ import com.paulrybitskyi.commons.ktx.*
 import com.paulrybitskyi.commons.ktx.views.setTextSizeInPx
 import com.paulrybitskyi.commons.utils.observeChanges
 import com.paulrybitskyi.commons.widgets.R
+import com.paulrybitskyi.commons.widgets.databinding.ViewToolbarBinding
 import com.paulrybitskyi.commons.widgets.toolbar.TitleGravity.Companion.asTitleGravity
 import com.paulrybitskyi.commons.widgets.toolbar.configs.ButtonConfig
 import com.paulrybitskyi.commons.widgets.toolbar.configs.TitleConfig
-import kotlinx.android.synthetic.main.view_toolbar.view.*
 import kotlin.math.max
 
 class Toolbar @JvmOverloads constructor(
@@ -45,6 +45,7 @@ class Toolbar @JvmOverloads constructor(
 ) : FrameLayout(context, attrs, defStyleAttr) {
 
 
+    private val defaultBackgroundColor = getColor(R.color.toolbar_background_color)
     private val defaultToolbarHeight = getDimensionPixelSize(R.dimen.toolbar_height)
     private val defaultButtonConfig = ButtonConfig(
         buttonContainerSize = getDimensionPixelSize(R.dimen.toolbar_button_container_size),
@@ -56,26 +57,28 @@ class Toolbar @JvmOverloads constructor(
         horizontalPaddingWithIcon = getDimensionPixelSize(R.dimen.toolbar_title_horizontal_padding_with_icon)
     )
 
+    private val binding = ViewToolbarBinding.inflate(context.layoutInflater, this)
+
     var isLeftButtonVisible: Boolean
         set(value) {
-            leftBtnContainer.isVisible = value
+            binding.leftBtnContainer.isVisible = value
             onLeftButtonVisibilityChanged()
         }
-        get() = leftBtnContainer.isVisible
+        get() = binding.leftBtnContainer.isVisible
 
     var isRightButtonVisible: Boolean
         set(value) {
-            rightBtnContainer.isVisible = value
+            binding.rightBtnContainer.isVisible = value
             onRightButtonVisibilityChanged()
         }
-        get() = rightBtnContainer.isVisible
+        get() = binding.rightBtnContainer.isVisible
 
     var isExtraRightButtonVisible: Boolean
         set(value) {
-            extraRightBtnContainer.isVisible = value
+            binding.extraRightBtnContainer.isVisible = value
             onRightButtonVisibilityChanged()
         }
-        get() = extraRightBtnContainer.isVisible
+        get() = binding.extraRightBtnContainer.isVisible
 
     private val areBothRightButtonsVisible: Boolean
         get() = (isRightButtonVisible && isExtraRightButtonVisible)
@@ -93,21 +96,21 @@ class Toolbar @JvmOverloads constructor(
     var buttonRippleColor: Int = getColor(R.color.toolbar_button_ripple_color)
         set(@ColorInt value) {
             field = value
-            leftBtnIv.background = leftBtnIv.background?.setColor(value)
-            rightBtnIv.background = rightBtnIv.background?.setColor(value)
-            extraRightBtnIv.background = extraRightBtnIv.background?.setColor(value)
+            binding.leftBtnIv.background = binding.leftBtnIv.background?.setColor(value)
+            binding.rightBtnIv.background = binding.rightBtnIv.background?.setColor(value)
+            binding.extraRightBtnIv.background = binding.extraRightBtnIv.background?.setColor(value)
         }
 
     @get:ColorInt
     var titleTextColor: Int = getColor(R.color.toolbar_title_text_color)
         set(@ColorInt value) {
             field = value
-            titleTv.setTextColor(value)
+            binding.titleTv.setTextColor(value)
         }
 
     var titleTextSize: Float
-        set(value) { titleTv.setTextSizeInPx(value) }
-        get() = titleTv.textSize
+        set(value) { binding.titleTv.setTextSizeInPx(value) }
+        get() = binding.titleTv.textSize
 
     /**
      * A field to access the text gravity of the title.
@@ -119,50 +122,50 @@ class Toolbar @JvmOverloads constructor(
      */
     var titleTextGravity by observeChanges(TitleGravity.CENTER) { _, newValue ->
         checkNewTitleGravity(newValue)
-        titleTv.gravity = (newValue.gravity or Gravity.CENTER_VERTICAL)
+        binding.titleTv.gravity = (newValue.gravity or Gravity.CENTER_VERTICAL)
         updateTitleHorizontalPadding()
     }
 
     var titleTextTypeface: Typeface
-        set(value) { titleTv.typeface = value }
-        get() = titleTv.typeface
+        set(value) { binding.titleTv.typeface = value }
+        get() = binding.titleTv.typeface
 
     var titleText: CharSequence
-        set(value) { titleTv.text = value }
-        get() = titleTv.text
+        set(value) { binding.titleTv.text = value }
+        get() = binding.titleTv.text
 
     var leftButtonIcon: Drawable?
         set(value) {
-            leftBtnIv.setImageDrawable(value?.setColor(buttonIconColor))
+            binding.leftBtnIv.setImageDrawable(value?.setColor(buttonIconColor))
             isLeftButtonVisible = (value != null)
         }
-        get() = leftBtnIv.drawable
+        get() = binding.leftBtnIv.drawable
 
     var rightButtonIcon: Drawable?
         set(value) {
-            rightBtnIv.setImageDrawable(value?.setColor(buttonIconColor))
+            binding.rightBtnIv.setImageDrawable(value?.setColor(buttonIconColor))
             isRightButtonVisible = (value != null)
         }
-        get() = rightBtnIv.drawable
+        get() = binding.rightBtnIv.drawable
 
     var extraRightButtonIcon: Drawable?
         set(value) {
-            extraRightBtnIv.setImageDrawable(value?.setColor(buttonIconColor))
+            binding.extraRightBtnIv.setImageDrawable(value?.setColor(buttonIconColor))
             isExtraRightButtonVisible = (value != null)
         }
-        get() = extraRightBtnIv.drawable
+        get() = binding.extraRightBtnIv.drawable
 
     val leftButtonAnimator: ViewPropertyAnimator
-        get() = extraRightBtnIv.animate()
+        get() = binding.extraRightBtnIv.animate()
 
     val rightButtonAnimator: ViewPropertyAnimator
-        get() = rightBtnIv.animate()
+        get() = binding.rightBtnIv.animate()
 
     val extraRightButtonAnimator: ViewPropertyAnimator
-        get() = rightBtnIv.animate()
+        get() = binding.rightBtnIv.animate()
 
     val titleAnimator: ViewPropertyAnimator
-        get() = titleTv.animate()
+        get() = binding.titleTv.animate()
 
     var buttonConfig by observeChanges(defaultButtonConfig) { _, newValue ->
         onButtonConfigChanged(newValue)
@@ -177,26 +180,25 @@ class Toolbar @JvmOverloads constructor(
     var onLeftButtonClickListener: ((View) -> Unit)? = null
         set(value) {
             field = value
-            leftBtnContainer.onClick { field?.invoke(it) }
+            binding.leftBtnContainer.onClick { field?.invoke(it) }
         }
 
     var onRightButtonClickListener: ((View) -> Unit)? = null
         set(value) {
             field = value
-            rightBtnContainer.onClick { field?.invoke(it) }
+            binding.rightBtnContainer.onClick { field?.invoke(it) }
         }
 
     var onExtraRightButtonClickListener: ((View) -> Unit)? = null
         set(value) {
             field = value
-            extraRightBtnContainer.onClick { field?.invoke(it) }
+            binding.extraRightBtnContainer.onClick { field?.invoke(it) }
         }
 
 
     init {
         elevation = getDimension(R.dimen.toolbar_elevation)
 
-        inflateView()
         initButtonInfos()
         initDefaults()
 
@@ -204,35 +206,26 @@ class Toolbar @JvmOverloads constructor(
     }
 
 
-    private fun inflateView() {
-        inflateView(
-            layoutResourceId = R.layout.view_toolbar,
-            root = this,
-            attachToRoot = true
-        )
-    }
-
-
     private fun initButtonInfos() {
         buttonInfos.apply {
             add(ButtonInfo(
-                containerView = leftBtnContainer,
-                iconView = leftBtnIv
+                containerView = binding.leftBtnContainer,
+                iconView = binding.leftBtnIv
             ))
             add(ButtonInfo(
-                containerView = rightBtnContainer,
-                iconView = rightBtnIv
+                containerView = binding.rightBtnContainer,
+                iconView = binding.rightBtnIv
             ))
             add(ButtonInfo(
-                containerView = extraRightBtnContainer,
-                iconView = extraRightBtnIv
+                containerView = binding.extraRightBtnContainer,
+                iconView = binding.extraRightBtnIv
             ))
         }
     }
 
 
     private fun initDefaults() {
-        setBackgroundColor(getColor(R.color.toolbar_background_color))
+        setBackgroundColor(defaultBackgroundColor)
         buttonRippleColor = buttonRippleColor
         leftButtonIcon = leftButtonIcon
         rightButtonIcon = rightButtonIcon
@@ -249,6 +242,7 @@ class Toolbar @JvmOverloads constructor(
             attrs = R.styleable.CustomToolbar,
             defStyleAttr = defStyleAttr
         ) {
+            setBackgroundColor(getColor(R.styleable.CustomToolbar_android_background, defaultBackgroundColor))
             buttonIconColor = getColor(R.styleable.CustomToolbar_toolbar_buttonIconColor, buttonIconColor)
             buttonRippleColor = getColor(R.styleable.CustomToolbar_toolbar_buttonRippleColor, buttonRippleColor)
             leftButtonIcon = getDrawable(R.styleable.CustomToolbar_toolbar_leftButtonIcon)
@@ -279,9 +273,9 @@ class Toolbar @JvmOverloads constructor(
         if(!isExtraRightButtonVisible) return
 
         if(isRightButtonVisible) {
-            extraRightBtnContainer.endMargin = buttonConfig.buttonContainerSize
+            binding.extraRightBtnContainer.endMargin = buttonConfig.buttonContainerSize
         } else {
-            extraRightBtnContainer.clearEndMargin()
+            binding.extraRightBtnContainer.clearEndMargin()
         }
     }
 
@@ -291,9 +285,9 @@ class Toolbar @JvmOverloads constructor(
         val rightPadding = calculateTitleRightPadding()
 
         if(titleTextGravity == TitleGravity.CENTER) {
-            titleTv.setHorizontalPadding(max(leftPadding, rightPadding))
+            binding.titleTv.setHorizontalPadding(max(leftPadding, rightPadding))
         } else {
-            titleTv.updatePadding(
+            binding.titleTv.updatePadding(
                 startPadding = leftPadding,
                 endPadding = rightPadding
             )

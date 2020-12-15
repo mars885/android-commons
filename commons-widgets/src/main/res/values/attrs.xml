@@ -35,6 +35,7 @@
     </declare-styleable>
 
     <declare-styleable name="CustomToolbar">
+        <attr name="android:background"/>
         <attr name="toolbar_buttonIconColor" format="color"/>
         <attr name="toolbar_buttonRippleColor" format="color"/>
         <attr name="toolbar_leftButtonIcon" format="reference"/>

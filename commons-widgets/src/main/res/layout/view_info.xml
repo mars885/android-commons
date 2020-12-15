@@ -56,6 +56,6 @@
         android:textSize="@dimen/info_view_description_text_size"
         android:textColor="@color/info_view_description_text_color"
         android:lineSpacingExtra="@dimen/info_view_description_text_line_spacing_extra"
-        tools:text="Donec tortor libero, auctor quis aliquet eget, pellentesque ut nisi."/>
+        android:visibility="gone"/>
 
 </merge>
