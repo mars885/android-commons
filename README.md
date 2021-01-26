@@ -1,10 +1,11 @@
 # Android Commons
 A suite of Android libraries that contain common functionality I use in projects.
 
-![](https://travis-ci.org/mars885/android-commons.svg?branch=master)
 ![](https://img.shields.io/badge/API-21%2B-orange.svg?style=flat)
-[![License](https://img.shields.io/badge/License-Apache%202.0-blue.svg)](https://opensource.org/licenses/Apache-2.0)
 [![Platform](https://img.shields.io/badge/platform-Android-green.svg)](http://developer.android.com/index.html)
+[![Build](https://github.com/mars885/android-commons/workflows/Build/badge.svg?branch=master)](https://github.com/mars885/android-commons/actions)
+![](https://travis-ci.org/mars885/android-commons.svg?branch=master)
+[![License](https://img.shields.io/badge/License-Apache%202.0-blue.svg)](https://opensource.org/licenses/Apache-2.0)
 
 ## Contents
 * [commons-core](https://github.com/mars885/android-commons/tree/master/commons/src/main/java/com/paulrybitskyi/commons)
