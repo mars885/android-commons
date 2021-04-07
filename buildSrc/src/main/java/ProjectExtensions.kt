@@ -1,5 +1,5 @@
 /*
- * Copyright 2020 Paul Rybitskyi, paul.rybitskyi.work@gmail.com
+ * Copyright 2021 Paul Rybitskyi, paul.rybitskyi.work@gmail.com
  *
  * Licensed under the Apache License, Version 2.0 (the "License");
  * you may not use this file except in compliance with the License.
@@ -14,10 +14,10 @@
  * limitations under the License.
  */
 
-ext {
-    libraryConfig = [
-        versionCode: 2,
-        versionName: "1.0.1",
-        artifactName: "commons-material"
-    ]
+import org.gradle.api.Project
+
+
+@Suppress("UNCHECKED_CAST")
+fun <T> Project.property(key: String, default: T): T {
+    return ((properties[key] as? T) ?: default)
 }
