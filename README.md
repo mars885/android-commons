@@ -19,14 +19,14 @@ A suite of Android libraries that contain common functionality I use in projects
 * [commons-listeners](https://github.com/mars885/android-commons/tree/master/commons-listeners/src/main/java/com/paulrybitskyi/commons/listeners)
 
 ## Installation
-1. Make sure that you've added the `jcenter()` repository to your top-level `build.gradle` file.
+1. Make sure that you've added the `mavenCentral()` repository to your top-level `build.gradle` file.
 
 ````groovy
 buildscript {
     //...
     repositories {
         //...
-        jcenter()
+        mavenCentral()
     }
     //...
 }
