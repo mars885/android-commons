@@ -59,6 +59,7 @@ object publishingConfig {
 
     const val artifactGroupId = "com.paulrybitskyi.commons"
     const val artifactWebsite = "https://github.com/mars885/android-commons"
+    const val artifactDescription = "A part of Android libraries suite that contains common functionality found in Android projects."
 
     const val mavenPublicationName = "release"
 

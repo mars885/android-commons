@@ -65,6 +65,7 @@ afterEvaluate {
 
                 pom {
                     name.set(publishingConfig.artifactName)
+                    description.set(publishingConfig.artifactDescription)
                     url.set(publishingConfig.artifactWebsite)
 
                     licenses {
