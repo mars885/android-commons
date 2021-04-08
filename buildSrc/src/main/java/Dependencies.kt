@@ -42,7 +42,9 @@ object versions {
     const val appCompat = "1.2.0"
     const val lifecycle = "2.2.0"
     const val constraintLayout = "2.0.4"
+    const val viewPager2 = "1.0.0"
     const val coreKtx = "1.3.2"
+    const val fragmentKtx = "1.3.2"
     const val recyclerView = "1.2.0"
     const val materialComponents = "1.3.0"
     const val navigation = "2.3.5"
@@ -73,7 +75,7 @@ object publishingConfig {
 
     // Artifact specifics
     const val commonsCoreArtifactName = "commons-core"
-    const val commonsCoreArtifactVersion = "1.0.1"
+    const val commonsCoreArtifactVersion = "1.0.2"
 
     const val commonsDeviceInfoArtifactName = "commons-device-info"
     const val commonsDeviceInfoArtifactVersion = "1.0.0"
@@ -138,8 +140,10 @@ object deps {
     const val lifecycleCommonJava8 = "androidx.lifecycle:lifecycle-common-java8:${versions.lifecycle}"
     const val lifecycleViewModel = "androidx.lifecycle:lifecycle-viewmodel:${versions.lifecycle}"
     const val constraintLayout = "androidx.constraintlayout:constraintlayout:${versions.constraintLayout}"
-    const val coreKtx = "androidx.core:core-ktx:${versions.coreKtx}"
+    const val viewPager2 = "androidx.viewpager2:viewpager2:${versions.viewPager2}"
     const val recyclerView = "androidx.recyclerview:recyclerview:${versions.recyclerView}"
+    const val coreKtx = "androidx.core:core-ktx:${versions.coreKtx}"
+    const val fragmentKtx = "androidx.fragment:fragment-ktx:${versions.fragmentKtx}"
     const val materialComponents = "com.google.android.material:material:${versions.materialComponents}"
     const val navigation = "androidx.navigation:navigation-fragment-ktx:${versions.navigation}"
     const val jUnit = "junit:junit:${versions.jUnit}"

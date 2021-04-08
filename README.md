@@ -37,7 +37,7 @@ buildscript {
 ````groovy
 dependencies {
     //...
-    implementation "com.paulrybitskyi.commons:commons-core:1.0.1"
+    implementation "com.paulrybitskyi.commons:commons-core:1.0.2"
     implementation "com.paulrybitskyi.commons:commons-ktx:1.0.1"
     implementation "com.paulrybitskyi.commons:commons-window-anims:1.0.0"
     implementation "com.paulrybitskyi.commons:commons-recyclerview:1.0.0"
