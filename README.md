@@ -46,7 +46,7 @@ dependencies {
     implementation "com.paulrybitskyi.commons:commons-device-info:1.0.0"
     implementation "com.paulrybitskyi.commons:commons-network:1.0.1"
     implementation "com.paulrybitskyi.commons:commons-widgets:1.0.1"
-    implementation "com.paulrybitskyi.commons:commons-listeners:1.0.0"
+    implementation "com.paulrybitskyi.commons:commons-listeners:1.0.1"
     //...
 }
 ````
