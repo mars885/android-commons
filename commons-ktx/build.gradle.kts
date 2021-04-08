@@ -52,6 +52,9 @@ dependencies {
 
     implementation(deps.appCompat)
     implementation(deps.coreKtx)
+    implementation(deps.fragmentKtx)
+    implementation(deps.constraintLayout)
+    implementation(deps.viewPager2)
 
     testImplementation(deps.jUnit)
 

@@ -58,6 +58,7 @@ fun Activity.setSoftInputMode(mode: Int) {
 }
 
 
+@Suppress("DEPRECATION")
 @SuppressLint("NewApi")
 fun Activity.setTaskDescription(
     label: String,

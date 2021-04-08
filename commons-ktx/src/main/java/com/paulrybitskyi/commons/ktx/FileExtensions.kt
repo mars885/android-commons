@@ -23,6 +23,7 @@ import com.paulrybitskyi.commons.SdkInfo
 import java.io.File
 
 
+@Suppress("DEPRECATION")
 inline fun File.newFileObserver(
     events: Int = FileObserver.ALL_EVENTS,
     crossinline onEventListener: (Int, String?) -> Unit

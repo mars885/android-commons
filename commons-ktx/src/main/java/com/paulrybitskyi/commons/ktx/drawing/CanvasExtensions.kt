@@ -25,6 +25,7 @@ import android.graphics.Region
 import com.paulrybitskyi.commons.SdkInfo
 
 
+@Suppress("DEPRECATION")
 @SuppressLint("NewApi")
 fun Canvas.clipOutPathCompat(path: Path) {
     if(SdkInfo.IS_AT_LEAST_OREO) {
@@ -35,6 +36,7 @@ fun Canvas.clipOutPathCompat(path: Path) {
 }
 
 
+@Suppress("DEPRECATION")
 @SuppressLint("NewApi")
 fun Canvas.clipPathCompat(path: Path) {
     if(SdkInfo.IS_AT_LEAST_OREO) {

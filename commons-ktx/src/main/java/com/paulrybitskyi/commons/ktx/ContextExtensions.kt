@@ -82,6 +82,7 @@ val Context.selectableItemBackgroundBorderless: Drawable?
 val Context.displayMetrics: DisplayMetrics
     get() = resources.displayMetrics
 
+@get:Suppress("DEPRECATION")
 @get:SuppressLint("NewApi")
 val Context.locale: Locale
     get() = with(resources.configuration) {
@@ -116,8 +117,20 @@ fun Context.getDimensionPixelSize(@DimenRes dimenId: Int): Int {
 }
 
 
+fun Context.getInteger(@IntegerRes intId: Int): Int {
+    return resources.getInteger(intId)
+}
+
+
 fun Context.getDimension(@DimenRes dimenId: Int): Float {
     return resources.getDimension(dimenId)
+}
+
+
+fun Context.getFloat(@IntegerRes floatId: Int): Float {
+    return TypedValue()
+        .also { resources.getValue(floatId, it, true) }
+        .let(TypedValue::getFloat)
 }
 
 
@@ -214,10 +227,14 @@ fun Context.arePermissionsDenied(permissions: Set<String>): Boolean {
  * Checks whether the intent can be handled by some activity
  * on the device or not.
  *
+ * Note: Due to [Android 11 package visibility changes](https://g.co/dev/packagevisibility), this
+ * method does not work on Android 11 and above.
+ *
  * @param intent The intent to check
  *
  * @return true if can be handled; false otherwise
  */
+@SuppressLint("QueryPermissionsNeeded")
 fun Context.canIntentBeHandled(intent: Intent): Boolean {
     return packageManager.queryIntentActivities(intent, 0).isNotEmpty()
 }
