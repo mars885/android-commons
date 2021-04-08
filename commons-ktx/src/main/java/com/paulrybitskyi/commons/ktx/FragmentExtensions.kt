@@ -18,13 +18,14 @@
 
 package com.paulrybitskyi.commons.ktx
 
+import android.graphics.Typeface
 import android.graphics.drawable.Drawable
 import android.graphics.drawable.GradientDrawable
+import android.view.Window
 import android.widget.Toast
-import androidx.annotation.ColorInt
-import androidx.annotation.ColorRes
-import androidx.annotation.DimenRes
-import androidx.annotation.DrawableRes
+import androidx.activity.OnBackPressedCallback
+import androidx.activity.addCallback
+import androidx.annotation.*
 import androidx.fragment.app.Fragment
 
 
@@ -38,6 +39,9 @@ var Fragment.navigationBarColor: Int
     set(@ColorInt value) { requireActivity().navigationBarColor = value }
     get() = requireActivity().navigationBarColor
 
+val Fragment.window: Window
+    get() = requireActivity().window
+
 
 fun Fragment.getColor(@ColorRes colorId: Int): Int {
     return requireContext().getCompatColor(colorId)
@@ -49,8 +53,23 @@ fun Fragment.getDimensionPixelSize(@DimenRes dimenId: Int): Int {
 }
 
 
+fun Fragment.getInteger(@IntegerRes intId: Int): Int {
+    return requireContext().getInteger(intId)
+}
+
+
 fun Fragment.getDimension(@DimenRes dimenId: Int): Float {
     return requireContext().getDimension(dimenId)
+}
+
+
+fun Fragment.getFloat(@IntegerRes floatId: Int): Float {
+    return requireContext().getFloat(floatId)
+}
+
+
+fun Fragment.getFont(@FontRes fontId: Int): Typeface? {
+    return requireContext().getFont(fontId)
 }
 
 
@@ -122,4 +141,13 @@ fun Fragment.setScreenAlwaysAwake(isScreenAlwaysAwake: Boolean) {
 
 fun Fragment.setSoftInputMode(mode: Int) {
     requireActivity().setSoftInputMode(mode)
+}
+
+
+fun Fragment.addOnBackPressCallback(
+    onBackPressed: OnBackPressedCallback.() -> Unit
+): OnBackPressedCallback {
+    return requireActivity()
+        .onBackPressedDispatcher
+        .addCallback(viewLifecycleOwner, onBackPressed = onBackPressed)
 }

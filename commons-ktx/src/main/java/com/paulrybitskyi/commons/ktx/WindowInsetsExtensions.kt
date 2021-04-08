@@ -18,8 +18,10 @@
 
 package com.paulrybitskyi.commons.ktx
 
+import android.annotation.SuppressLint
 import android.view.View
 import android.view.WindowInsets
+import com.paulrybitskyi.commons.SdkInfo
 
 
 fun View.applyWindowStartInsetAsMargin() {
@@ -98,10 +100,10 @@ fun View.applyWindowInsets(
     applyBottomInset: Boolean = false
 ) {
     doOnApplyWindowInsets(type) { targetView, insets, dimensions ->
-        val start = (dimensions.start + (if(applyStartInset) insets.systemWindowInsetLeft else 0))
-        val top = (dimensions.top + (if(applyTopInset) insets.systemWindowInsetTop else 0))
-        val end = (dimensions.end + (if(applyEndInset) insets.systemWindowInsetRight else 0))
-        val bottom = (dimensions.bottom + (if(applyBottomInset) insets.systemWindowInsetBottom else 0))
+        val start = (dimensions.start + (if(applyStartInset) insets.getCompatSystemWindowInsetLeft() else 0))
+        val top = (dimensions.top + (if(applyTopInset) insets.getCompatSystemWindowInsetTop() else 0))
+        val end = (dimensions.end + (if(applyEndInset) insets.getCompatSystemWindowInsetRight() else 0))
+        val bottom = (dimensions.bottom + (if(applyBottomInset) insets.getCompatSystemWindowInsetBottom() else 0))
 
         when(type) {
             DimensionSnapshotType.MARGINS -> targetView.setMargins(start, top, end, bottom)
@@ -161,6 +163,50 @@ fun View.requestApplyInsetsWhenAttached() {
             override fun onViewDetachedFromWindow(view: View) = Unit
 
         })
+    }
+}
+
+
+@Suppress("DEPRECATION")
+@SuppressLint("NewApi")
+fun WindowInsets.getCompatSystemWindowInsetLeft(): Int {
+    return if(SdkInfo.IS_AT_LEAST_11) {
+        getInsets(WindowInsets.Type.systemBars()).left
+    } else {
+        systemWindowInsetLeft
+    }
+}
+
+
+@Suppress("DEPRECATION")
+@SuppressLint("NewApi")
+fun WindowInsets.getCompatSystemWindowInsetTop(): Int {
+    return if(SdkInfo.IS_AT_LEAST_11) {
+        getInsets(WindowInsets.Type.systemBars()).top
+    } else {
+        systemWindowInsetTop
+    }
+}
+
+
+@Suppress("DEPRECATION")
+@SuppressLint("NewApi")
+fun WindowInsets.getCompatSystemWindowInsetRight(): Int {
+    return if(SdkInfo.IS_AT_LEAST_11) {
+        getInsets(WindowInsets.Type.systemBars()).right
+    } else {
+        systemWindowInsetRight
+    }
+}
+
+
+@Suppress("DEPRECATION")
+@SuppressLint("NewApi")
+fun WindowInsets.getCompatSystemWindowInsetBottom(): Int {
+    return if(SdkInfo.IS_AT_LEAST_11) {
+        getInsets(WindowInsets.Type.systemBars()).bottom
+    } else {
+        systemWindowInsetBottom
     }
 }
 

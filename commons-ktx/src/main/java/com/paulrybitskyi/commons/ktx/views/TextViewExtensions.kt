@@ -91,6 +91,7 @@ fun TextView.clearCompoundDrawables() {
 }
 
 
+@Suppress("DEPRECATION")
 @SuppressLint("NewApi")
 fun TextView.setTextAppearanceCompat(@StyleRes id: Int) {
     if(SdkInfo.IS_AT_LEAST_MARSHMALLOW) {

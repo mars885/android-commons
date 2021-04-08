@@ -19,8 +19,10 @@
 
 package com.paulrybitskyi.commons.ktx
 
+import android.graphics.Typeface
 import android.graphics.drawable.Drawable
 import android.graphics.drawable.GradientDrawable
+import android.util.TypedValue
 import android.view.View
 import android.view.ViewGroup
 import android.widget.Toast
@@ -260,8 +262,23 @@ fun View.getDimensionPixelSize(@DimenRes dimenId: Int): Int {
 }
 
 
+fun View.getInteger(@IntegerRes intId: Int): Int {
+    return context.getInteger(intId)
+}
+
+
 fun View.getDimension(@DimenRes dimenId: Int): Float {
     return context.getDimension(dimenId)
+}
+
+
+fun View.getFloat(@IntegerRes floatId: Int): Float {
+    return context.getFloat(floatId)
+}
+
+
+fun View.getFont(@FontRes fontId: Int): Typeface? {
+    return context.getFont(fontId)
 }
 
 
@@ -436,4 +453,9 @@ fun <T> View.invalidateOnChange(initialValue: T): ReadWriteProperty<Any, T> {
 
 fun <T> View.relayoutOnChange(initialValue: T): ReadWriteProperty<Any, T> {
     return observeChanges(initialValue) {  _, _ -> requestLayout() }
+}
+
+
+fun View.detachFromParent() {
+    (this.parent as? ViewGroup)?.removeView(this)
 }
