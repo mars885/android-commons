@@ -31,6 +31,7 @@ import com.paulrybitskyi.commons.network.model.NetworkType
 import com.paulrybitskyi.commons.network.utils.*
 
 
+@get:Suppress("DEPRECATION")
 @get:RequiresPermission(Manifest.permission.ACCESS_NETWORK_STATE)
 val Context.isConnectedToNetwork: Boolean
     get() = (getSystemService<ConnectivityManager>().activeNetworkInfo?.isConnected == true)

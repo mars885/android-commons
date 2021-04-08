@@ -74,6 +74,7 @@ internal class NewNetworkTypeProvider(
 }
 
 
+@Suppress("DEPRECATION")
 internal class LegacyNetworkTypeProvider(
     private val connectivityManager: ConnectivityManager
 ) : NetworkTypeProvider {

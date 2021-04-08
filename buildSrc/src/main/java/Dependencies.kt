@@ -93,7 +93,7 @@ object publishingConfig {
     const val commonsNavigationArtifactVersion = "1.0.1"
 
     const val commonsNetworkArtifactName = "commons-network"
-    const val commonsNetworkArtifactVersion = "1.0.0"
+    const val commonsNetworkArtifactVersion = "1.0.1"
 
     const val commonsRecyclerViewArtifactName = "commons-recyclerview"
     const val commonsRecyclerViewArtifactVersion = "1.0.0"
