@@ -85,7 +85,7 @@ object publishingConfig {
     const val commonsKtxArtifactVersion = "1.0.2"
 
     const val commonsListenersArtifactName = "commons-listeners"
-    const val commonsListenersArtifactVersion = "1.0.0"
+    const val commonsListenersArtifactVersion = "1.0.1"
 
     const val commonsMaterialArtifactName = "commons-material"
     const val commonsMaterialArtifactVersion = "1.0.1"
