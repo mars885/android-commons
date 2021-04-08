@@ -21,10 +21,10 @@ import org.gradle.api.JavaVersion
 
 object appConfig {
 
-    const val compileSdkVersion = 29
-    const val targetSdkVersion = 29
+    const val compileSdkVersion = 30
+    const val targetSdkVersion = 30
     const val minSdkVersion = 21
-    const val buildToolsVersion = "29.0.2"
+    const val buildToolsVersion = "29.0.3"
     const val applicationId = "com.paulrybitskyi.commons.sample"
 
     val javaCompatibilityVersion = JavaVersion.VERSION_1_8
@@ -35,20 +35,20 @@ object appConfig {
 
 object versions {
 
-    const val kotlin = "1.4.21"
-    const val gradlePlugin = "4.1.1"
-    const val gradleVersionsPlugin = "0.36.0"
+    const val kotlin = "1.4.32" // also in buildSrc build.gradle.kts file
+    const val gradlePlugin = "4.1.3" // also in buildSrc build.gradle.kts file
+    const val gradleVersionsPlugin = "0.38.0"
     const val dokkaPlugin = "1.4.30"
-    const val appCompatVersion = "1.2.0"
-    const val lifecycleVersion = "2.2.0"
-    const val constraintLayoutVersion = "2.0.2"
-    const val coreKtxVersion = "1.3.1"
-    const val recyclerViewVersion = "1.1.0"
-    const val materialComponentsVersion = "1.2.0"
-    const val navigationVersion = "2.3.2"
-    const val jUnitVersion = "4.13.1"
-    const val jUnitExtVersion = "1.1.1"
-    const val espressoVersion = "3.2.0"
+    const val appCompat = "1.2.0"
+    const val lifecycle = "2.2.0"
+    const val constraintLayout = "2.0.4"
+    const val coreKtx = "1.3.2"
+    const val recyclerView = "1.2.0"
+    const val materialComponents = "1.3.0"
+    const val navigation = "2.3.5"
+    const val jUnit = "4.13.2"
+    const val jUnitExt = "1.1.2"
+    const val espresso = "3.2.0"
 
 }
 
@@ -134,17 +134,16 @@ object deps {
 
     }
 
-    const val stdLib = "org.jetbrains.kotlin:kotlin-stdlib-jdk8:${versions.kotlin}"
-    const val appCompat = "androidx.appcompat:appcompat:${versions.appCompatVersion}"
-    const val lifecycleCommonJava8 = "androidx.lifecycle:lifecycle-common-java8:${versions.lifecycleVersion}"
-    const val lifecycleViewModel = "androidx.lifecycle:lifecycle-viewmodel:${versions.lifecycleVersion}"
-    const val constraintLayout = "androidx.constraintlayout:constraintlayout:${versions.constraintLayoutVersion}"
-    const val coreKtx = "androidx.core:core-ktx:${versions.coreKtxVersion}"
-    const val recyclerView = "androidx.recyclerview:recyclerview:${versions.recyclerViewVersion}"
-    const val materialComponents = "com.google.android.material:material:${versions.materialComponentsVersion}"
-    const val navigation = "androidx.navigation:navigation-fragment-ktx:${versions.navigationVersion}"
-    const val jUnit = "junit:junit:${versions.jUnitVersion}"
-    const val jUnitExt = "androidx.test.ext:junit:${versions.jUnitExtVersion}"
-    const val espressoCore = "androidx.test.espresso:espresso-core:${versions.espressoVersion}"
+    const val appCompat = "androidx.appcompat:appcompat:${versions.appCompat}"
+    const val lifecycleCommonJava8 = "androidx.lifecycle:lifecycle-common-java8:${versions.lifecycle}"
+    const val lifecycleViewModel = "androidx.lifecycle:lifecycle-viewmodel:${versions.lifecycle}"
+    const val constraintLayout = "androidx.constraintlayout:constraintlayout:${versions.constraintLayout}"
+    const val coreKtx = "androidx.core:core-ktx:${versions.coreKtx}"
+    const val recyclerView = "androidx.recyclerview:recyclerview:${versions.recyclerView}"
+    const val materialComponents = "com.google.android.material:material:${versions.materialComponents}"
+    const val navigation = "androidx.navigation:navigation-fragment-ktx:${versions.navigation}"
+    const val jUnit = "junit:junit:${versions.jUnit}"
+    const val jUnitExt = "androidx.test.ext:junit:${versions.jUnitExt}"
+    const val espressoCore = "androidx.test.espresso:espresso-core:${versions.espresso}"
 
 }
