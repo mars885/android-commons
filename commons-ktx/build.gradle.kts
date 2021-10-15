@@ -21,7 +21,6 @@ plugins {
 
 android {
     compileSdkVersion(appConfig.compileSdkVersion)
-    buildToolsVersion(appConfig.buildToolsVersion)
 
     defaultConfig {
         minSdkVersion(appConfig.minSdkVersion)
@@ -55,11 +54,6 @@ dependencies {
     implementation(deps.fragmentKtx)
     implementation(deps.constraintLayout)
     implementation(deps.viewPager2)
-
-    testImplementation(deps.jUnit)
-
-    androidTestImplementation(deps.jUnitExt)
-    androidTestImplementation(deps.espressoCore)
 }
 
 publishingConfig.artifactName = publishingConfig.commonsKtxArtifactName

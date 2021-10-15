@@ -21,7 +21,6 @@ plugins {
 
 android {
     compileSdkVersion(appConfig.compileSdkVersion)
-    buildToolsVersion(appConfig.buildToolsVersion)
 
     defaultConfig {
         applicationId = appConfig.applicationId
@@ -62,9 +61,4 @@ dependencies {
 
     implementation(deps.appCompat)
     implementation(deps.constraintLayout)
-
-    testImplementation(deps.jUnit)
-
-    androidTestImplementation(deps.jUnitExt)
-    androidTestImplementation(deps.espressoCore)
 }

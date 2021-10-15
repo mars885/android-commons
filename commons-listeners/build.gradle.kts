@@ -21,7 +21,6 @@ plugins {
 
 android {
     compileSdkVersion(appConfig.compileSdkVersion)
-    buildToolsVersion(appConfig.buildToolsVersion)
 
     defaultConfig {
         minSdkVersion(appConfig.minSdkVersion)
@@ -45,13 +44,6 @@ android {
     kotlinOptions {
         jvmTarget = appConfig.kotlinCompatibilityVersion.toString()
     }
-}
-
-dependencies {
-    testImplementation(deps.jUnit)
-
-    androidTestImplementation(deps.jUnitExt)
-    androidTestImplementation(deps.espressoCore)
 }
 
 publishingConfig.artifactName = publishingConfig.commonsListenersArtifactName

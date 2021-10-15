@@ -21,7 +21,6 @@ plugins {
 
 android {
     compileSdkVersion(appConfig.compileSdkVersion)
-    buildToolsVersion(appConfig.buildToolsVersion)
 
     defaultConfig {
         minSdkVersion(appConfig.minSdkVersion)
@@ -52,11 +51,6 @@ dependencies {
     implementation(project(deps.local.commonsKtx))
 
     implementation(deps.appCompat)
-
-    testImplementation(deps.jUnit)
-
-    androidTestImplementation(deps.jUnitExt)
-    androidTestImplementation(deps.espressoCore)
 }
 
 publishingConfig.artifactName = publishingConfig.commonsNetworkArtifactName

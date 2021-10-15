@@ -21,7 +21,6 @@ plugins {
 
 android {
     compileSdkVersion(appConfig.compileSdkVersion)
-    buildToolsVersion(appConfig.buildToolsVersion)
 
     defaultConfig {
         minSdkVersion(appConfig.minSdkVersion)
@@ -57,11 +56,6 @@ dependencies {
 
     implementation(deps.appCompat)
     implementation(deps.coreKtx)
-
-    testImplementation(deps.jUnit)
-
-    androidTestImplementation(deps.jUnitExt)
-    androidTestImplementation(deps.espressoCore)
 }
 
 publishingConfig.artifactName = publishingConfig.commonsWidgetsArtifactName
