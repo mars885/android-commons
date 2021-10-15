@@ -21,7 +21,6 @@ plugins {
 
 android {
     compileSdkVersion(appConfig.compileSdkVersion)
-    buildToolsVersion(appConfig.buildToolsVersion)
 
     defaultConfig {
         minSdkVersion(appConfig.minSdkVersion)
@@ -49,11 +48,6 @@ android {
 
 dependencies {
     implementation(deps.navigation)
-
-    testImplementation(deps.jUnit)
-
-    androidTestImplementation(deps.jUnitExt)
-    androidTestImplementation(deps.espressoCore)
 }
 
 publishingConfig.artifactName = publishingConfig.commonsNavigationArtifactName

@@ -24,33 +24,29 @@ object appConfig {
     const val compileSdkVersion = 30
     const val targetSdkVersion = 30
     const val minSdkVersion = 21
-    const val buildToolsVersion = "29.0.3"
     const val applicationId = "com.paulrybitskyi.commons.sample"
 
-    val javaCompatibilityVersion = JavaVersion.VERSION_1_8
-    val kotlinCompatibilityVersion = JavaVersion.VERSION_1_8
+    val javaCompatibilityVersion = JavaVersion.VERSION_11
+    val kotlinCompatibilityVersion = JavaVersion.VERSION_11
 
 }
 
 
 object versions {
 
-    const val kotlin = "1.4.32" // also in buildSrc build.gradle.kts file
-    const val gradlePlugin = "4.1.3" // also in buildSrc build.gradle.kts file
-    const val gradleVersionsPlugin = "0.38.0"
-    const val dokkaPlugin = "1.4.30"
-    const val appCompat = "1.2.0"
-    const val lifecycle = "2.2.0"
-    const val constraintLayout = "2.0.4"
+    const val kotlin = "1.5.31" // also in buildSrc build.gradle.kts file
+    const val gradlePlugin = "7.0.3" // also in buildSrc build.gradle.kts file
+    const val gradleVersionsPlugin = "0.39.0"
+    const val dokkaPlugin = "1.5.31"
+    const val appCompat = "1.3.1"
+    const val lifecycle = "2.3.1"
+    const val constraintLayout = "2.1.1"
     const val viewPager2 = "1.0.0"
-    const val coreKtx = "1.3.2"
-    const val fragmentKtx = "1.3.2"
-    const val recyclerView = "1.2.0"
-    const val materialComponents = "1.3.0"
+    const val coreKtx = "1.6.0"
+    const val fragmentKtx = "1.3.6"
+    const val recyclerView = "1.2.1"
+    const val materialComponents = "1.4.0"
     const val navigation = "2.3.5"
-    const val jUnit = "4.13.2"
-    const val jUnitExt = "1.1.2"
-    const val espresso = "3.2.0"
 
 }
 
@@ -147,8 +143,5 @@ object deps {
     const val fragmentKtx = "androidx.fragment:fragment-ktx:${versions.fragmentKtx}"
     const val materialComponents = "com.google.android.material:material:${versions.materialComponents}"
     const val navigation = "androidx.navigation:navigation-fragment-ktx:${versions.navigation}"
-    const val jUnit = "junit:junit:${versions.jUnit}"
-    const val jUnitExt = "androidx.test.ext:junit:${versions.jUnitExt}"
-    const val espressoCore = "androidx.test.espresso:espresso-core:${versions.espresso}"
 
 }
