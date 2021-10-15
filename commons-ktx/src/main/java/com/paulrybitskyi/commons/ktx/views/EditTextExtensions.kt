@@ -18,6 +18,7 @@
 
 package com.paulrybitskyi.commons.ktx.views
 
+import android.annotation.SuppressLint
 import android.graphics.drawable.Drawable
 import android.text.TextWatcher
 import android.widget.EditText
@@ -48,6 +49,7 @@ var EditText.isEditingEnabled: Boolean
  *
  * @param drawable The drawable to set
  */
+@SuppressLint("SoonBlockedPrivateApi", "DiscouragedPrivateApi")
 fun EditText.setCursorDrawable(drawable: Drawable) {
     if(SdkInfo.IS_AT_LEAST_PIE) {
         return
