@@ -62,3 +62,12 @@ dependencies {
     implementation(deps.appCompat)
     implementation(deps.constraintLayout)
 }
+
+val installGitHook by tasks.registering(Copy::class) {
+    from(File(rootProject.rootDir, "hooks/pre-push"))
+    into(File(rootProject.rootDir, ".git/hooks/"))
+    // https://github.com/gradle/kotlin-dsl-samples/issues/1412
+    fileMode = 0b111101101 // -rwxr-xr-x
+}
+
+tasks.getByPath(":app:preBuild").dependsOn(installGitHook)
