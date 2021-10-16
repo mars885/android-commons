@@ -58,5 +58,5 @@ fun String.capitalize(locale: Locale): String {
         return this
     }
 
-    return substring(0, 1).toUpperCase(locale) + substring(1)
+    return substring(0, 1).uppercase(locale) + substring(1)
 }
