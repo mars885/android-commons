@@ -18,7 +18,6 @@
 
 import org.gradle.api.JavaVersion
 
-
 object appConfig {
 
     const val compileSdkVersion = 30
@@ -28,9 +27,7 @@ object appConfig {
 
     val javaCompatibilityVersion = JavaVersion.VERSION_11
     val kotlinCompatibilityVersion = JavaVersion.VERSION_11
-
 }
-
 
 object versions {
 
@@ -49,15 +46,14 @@ object versions {
     const val recyclerView = "1.2.1"
     const val materialComponents = "1.4.0"
     const val navigation = "2.3.5"
-
 }
-
 
 object publishingConfig {
 
     const val artifactGroupId = "com.paulrybitskyi.commons"
     const val artifactWebsite = "https://github.com/mars885/android-commons"
-    const val artifactDescription = "A part of Android libraries suite that contains common functionality found in Android projects."
+    const val artifactDescription = "A part of Android libraries suite that contains common " +
+        "functionality found in Android projects."
 
     const val mavenPublicationName = "release"
 
@@ -105,9 +101,7 @@ object publishingConfig {
 
     var artifactName = ""
     var artifactVersion = ""
-
 }
-
 
 object deps {
 
@@ -117,7 +111,6 @@ object deps {
         const val kotlinGradle = "org.jetbrains.kotlin:kotlin-gradle-plugin:${versions.kotlin}"
         const val gradleVersions = "com.github.ben-manes:gradle-versions-plugin:${versions.gradleVersionsPlugin}"
         const val dokka = "org.jetbrains.dokka:dokka-gradle-plugin:${versions.dokkaPlugin}"
-
     }
 
     object local {
@@ -132,7 +125,6 @@ object deps {
         const val commonsNetwork = ":commons-network"
         const val commonsWidgets = ":commons-widgets"
         const val commonsListeners = ":commons-listeners"
-
     }
 
     const val appCompat = "androidx.appcompat:appcompat:${versions.appCompat}"
@@ -145,5 +137,4 @@ object deps {
     const val fragmentKtx = "androidx.fragment:fragment-ktx:${versions.fragmentKtx}"
     const val materialComponents = "com.google.android.material:material:${versions.materialComponents}"
     const val navigation = "androidx.navigation:navigation-fragment-ktx:${versions.navigation}"
-
 }

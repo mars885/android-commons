@@ -18,7 +18,6 @@ import org.gradle.kotlin.dsl.version
 import org.gradle.plugin.use.PluginDependenciesSpec
 import org.gradle.plugin.use.PluginDependencySpec
 
-
 const val PLUGIN_DETEKT = "io.gitlab.arturbosch.detekt"
 const val PLUGIN_KTLINT = "org.jlleitschuh.gradle.ktlint"
 const val PLUGIN_GRADLE_VERSIONS = "com.github.ben-manes.versions"
@@ -30,41 +29,33 @@ const val PLUGIN_KOTLIN_ANDROID = "kotlin-android"
 const val PLUGIN_MAVEN_PUBLISH = "maven-publish"
 const val PLUGIN_SIGNING = "org.gradle.signing"
 
-
 fun PluginDependenciesSpec.detekt(): PluginDependencySpec {
     return (id(PLUGIN_DETEKT) version versions.detektPlugin)
 }
-
 
 fun PluginDependenciesSpec.ktlint(): PluginDependencySpec {
     return (id(PLUGIN_KTLINT) version versions.ktlintPlugin)
 }
 
-
 fun PluginDependenciesSpec.gradleVersions(): PluginDependencySpec {
     return (id(PLUGIN_GRADLE_VERSIONS) version versions.gradleVersionsPlugin)
 }
-
 
 fun PluginDependenciesSpec.dokka(): PluginDependencySpec {
     return (id(PLUGIN_DOKKA) version versions.dokkaPlugin)
 }
 
-
 fun PluginDependenciesSpec.androidApplication(): PluginDependencySpec {
     return id(PLUGIN_ANDROID_APPLICATION)
 }
-
 
 fun PluginDependenciesSpec.androidLibrary(): PluginDependencySpec {
     return id(PLUGIN_ANDROID_LIBRARY)
 }
 
-
 fun PluginDependenciesSpec.kotlin(): PluginDependencySpec {
     return id(PLUGIN_KOTLIN)
 }
-
 
 fun PluginDependenciesSpec.kotlinAndroid(): PluginDependencySpec {
     return id(PLUGIN_KOTLIN_ANDROID)
