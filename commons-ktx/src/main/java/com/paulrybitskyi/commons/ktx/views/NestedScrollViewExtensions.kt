@@ -22,11 +22,9 @@ import android.view.View
 import androidx.core.widget.NestedScrollView
 import com.paulrybitskyi.commons.ktx.postAction
 
-
 fun NestedScrollView.scrollToTop() {
     postAction { fullScroll(View.FOCUS_UP) }
 }
-
 
 fun NestedScrollView.scrollToBottom() {
     postAction { fullScroll(View.FOCUS_DOWN) }

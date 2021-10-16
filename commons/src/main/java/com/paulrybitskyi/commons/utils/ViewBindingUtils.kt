@@ -27,7 +27,6 @@ import androidx.viewbinding.ViewBinding
 import kotlin.properties.ReadOnlyProperty
 import kotlin.reflect.KProperty
 
-
 inline fun <T : ViewBinding> AppCompatActivity.viewBinding(
     crossinline bindingInflater: (LayoutInflater) -> T
 ): Lazy<T> {
@@ -36,22 +35,18 @@ inline fun <T : ViewBinding> AppCompatActivity.viewBinding(
     }
 }
 
-
 fun <T : ViewBinding> Fragment.viewBinding(
     viewBindingFactory: (View) -> T
 ): FragmentViewBindingDelegate<T> {
     return FragmentViewBindingDelegate(this, viewBindingFactory)
 }
 
-
 class FragmentViewBindingDelegate<T : ViewBinding>(
     private val fragment: Fragment,
     private val viewBindingFactory: (View) -> T
 ) : ReadOnlyProperty<Fragment, T> {
 
-
     private var binding: T? = null
-
 
     init {
         // Keeping a view reference up until Fragment's onDestroy is called
@@ -61,25 +56,21 @@ class FragmentViewBindingDelegate<T : ViewBinding>(
             override fun onDestroy(owner: LifecycleOwner) {
                 binding = null
             }
-
         })
     }
 
-
     override fun getValue(thisRef: Fragment, property: KProperty<*>): T {
-        if(binding != null) {
+        if (binding != null) {
             return checkNotNull(binding)
         }
 
         val lifecycle = fragment.viewLifecycleOwner.lifecycle
 
-        if(!lifecycle.currentState.isAtLeast(Lifecycle.State.INITIALIZED)) {
+        if (!lifecycle.currentState.isAtLeast(Lifecycle.State.INITIALIZED)) {
             throw IllegalStateException("Could not retrieve a view binding when the fragment is not initialized.")
         }
 
         return viewBindingFactory(thisRef.requireView())
             .also { binding = it }
     }
-
-
 }

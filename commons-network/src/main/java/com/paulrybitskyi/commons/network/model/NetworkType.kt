@@ -23,5 +23,4 @@ enum class NetworkType(val title: String) {
     WIFI("Wi-Fi"),
     CELLULAR("Cellular"),
     ETHERNET("Ethernet")
-
 }

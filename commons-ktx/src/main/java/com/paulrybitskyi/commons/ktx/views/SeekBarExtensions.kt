@@ -20,19 +20,16 @@ package com.paulrybitskyi.commons.ktx.views
 
 import android.widget.SeekBar
 import androidx.annotation.ColorInt
-import com.paulrybitskyi.commons.ktx.toColorStateList
 import com.paulrybitskyi.commons.ktx.setColor
-
+import com.paulrybitskyi.commons.ktx.toColorStateList
 
 fun SeekBar.setThumbColor(@ColorInt color: Int) {
     thumb.setColor(color)
 }
 
-
 fun SeekBar.setPrimaryProgressColor(@ColorInt color: Int) {
     progressTintList = color.toColorStateList()
 }
-
 
 fun SeekBar.setSecondaryProgressColor(@ColorInt color: Int) {
     progressBackgroundTintList = color.toColorStateList()

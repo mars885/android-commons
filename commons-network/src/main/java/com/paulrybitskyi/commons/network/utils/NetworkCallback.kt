@@ -26,12 +26,10 @@ class NetworkCallback(
     private val listener: NetworkListener
 ) : ConnectivityManager.NetworkCallback() {
 
-
     private val Network.id: String
         get() = toString()
 
     private val activeNetworksMap = ConcurrentHashMap<String, NetworkType>()
-
 
     override fun onAvailable(network: Network) {
         super.onAvailable(network)
@@ -41,13 +39,10 @@ class NetworkCallback(
             .also { listener.onNetworkConnected(it) }
     }
 
-
     override fun onLost(network: Network) {
         super.onLost(network)
 
         (activeNetworksMap.remove(network.id) ?: NetworkType.UNDEFINED)
             .also { listener.onNetworkDisconnected(it) }
     }
-
-
 }

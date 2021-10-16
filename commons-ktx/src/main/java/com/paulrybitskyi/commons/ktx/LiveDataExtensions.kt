@@ -20,7 +20,5 @@ package com.paulrybitskyi.commons.ktx
 
 import androidx.lifecycle.LiveData
 
-
 val <T> LiveData<T>.nonNullValue: T
-    get() = checkNotNull(value){
-}
+    get() = checkNotNull(value)

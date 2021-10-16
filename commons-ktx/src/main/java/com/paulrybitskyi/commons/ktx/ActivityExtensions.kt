@@ -26,7 +26,6 @@ import androidx.annotation.ColorInt
 import androidx.annotation.DrawableRes
 import com.paulrybitskyi.commons.SdkInfo
 
-
 @get:ColorInt
 var Activity.statusBarColor: Int
     set(@ColorInt value) { window.statusBarColor = value }
@@ -37,26 +36,21 @@ var Activity.navigationBarColor: Int
     set(@ColorInt value) { window.navigationBarColor = value }
     get() = window.navigationBarColor
 
-
 fun Activity.makeScreenAlwaysAwake() {
     window.makeScreenAlwaysAwake()
 }
-
 
 fun Activity.makeScreenSleepable() {
     window.makeScreenSleepable()
 }
 
-
 fun Activity.setScreenAlwaysAwake(isScreenAlwaysAwake: Boolean) {
     window.setScreenAlwaysAwake(isScreenAlwaysAwake)
 }
 
-
 fun Activity.setSoftInputMode(mode: Int) {
     window.setSoftInputMode(mode)
 }
-
 
 @Suppress("DEPRECATION")
 @SuppressLint("NewApi")
@@ -66,7 +60,7 @@ fun Activity.setTaskDescription(
     @ColorInt primaryColor: Int
 ) {
     setTaskDescription(
-        if(SdkInfo.IS_AT_LEAST_PIE) {
+        if (SdkInfo.IS_AT_LEAST_PIE) {
             ActivityManager.TaskDescription(label, iconId, primaryColor)
         } else {
             ActivityManager.TaskDescription(

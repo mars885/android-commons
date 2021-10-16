@@ -57,7 +57,6 @@ class Toolbar @JvmOverloads constructor(
     defStyleAttr: Int = 0
 ) : FrameLayout(context, attrs, defStyleAttr) {
 
-
     private val defaultBackgroundColor = getColor(R.color.toolbar_background_color)
     private val defaultToolbarHeight = getDimensionPixelSize(R.dimen.toolbar_height)
     private val defaultButtonConfig = ButtonConfig(
@@ -208,7 +207,6 @@ class Toolbar @JvmOverloads constructor(
             binding.extraRightBtnContainer.onClick { field?.invoke(it) }
         }
 
-
     init {
         elevation = getDimension(R.dimen.toolbar_elevation)
 
@@ -218,24 +216,28 @@ class Toolbar @JvmOverloads constructor(
         attrs?.let { extractAttributes(it, defStyleAttr) }
     }
 
-
     private fun initButtonInfos() {
         buttonInfos.apply {
-            add(ButtonInfo(
-                containerView = binding.leftBtnContainer,
-                iconView = binding.leftBtnIv
-            ))
-            add(ButtonInfo(
-                containerView = binding.rightBtnContainer,
-                iconView = binding.rightBtnIv
-            ))
-            add(ButtonInfo(
-                containerView = binding.extraRightBtnContainer,
-                iconView = binding.extraRightBtnIv
-            ))
+            add(
+                ButtonInfo(
+                    containerView = binding.leftBtnContainer,
+                    iconView = binding.leftBtnIv
+                )
+            )
+            add(
+                ButtonInfo(
+                    containerView = binding.rightBtnContainer,
+                    iconView = binding.rightBtnIv
+                )
+            )
+            add(
+                ButtonInfo(
+                    containerView = binding.extraRightBtnContainer,
+                    iconView = binding.extraRightBtnIv
+                )
+            )
         }
     }
-
 
     private fun initDefaults() {
         setBackgroundColor(defaultBackgroundColor)
@@ -247,7 +249,6 @@ class Toolbar @JvmOverloads constructor(
         buttonConfig = buttonConfig
         titleConfig = titleConfig
     }
-
 
     private fun extractAttributes(attrs: AttributeSet, defStyleAttr: Int) {
         context.withStyledAttributes(
@@ -270,11 +271,9 @@ class Toolbar @JvmOverloads constructor(
         }
     }
 
-
     private fun onLeftButtonVisibilityChanged() {
         updateTitleHorizontalPadding()
     }
-
 
     private fun onRightButtonVisibilityChanged() {
         updateExtraRightButtonContainerPosition()
@@ -282,23 +281,21 @@ class Toolbar @JvmOverloads constructor(
         updateTitleGravity()
     }
 
-
     private fun updateExtraRightButtonContainerPosition() {
-        if(!isExtraRightButtonVisible) return
+        if (!isExtraRightButtonVisible) return
 
-        if(isRightButtonVisible) {
+        if (isRightButtonVisible) {
             binding.extraRightBtnContainer.endMargin = buttonConfig.buttonContainerSize
         } else {
             binding.extraRightBtnContainer.clearEndMargin()
         }
     }
 
-
     private fun updateTitleHorizontalPadding() {
         val leftPadding = calculateTitleLeftPadding()
         val rightPadding = calculateTitleRightPadding()
 
-        if(titleTextGravity == TitleGravity.CENTER) {
+        if (titleTextGravity == TitleGravity.CENTER) {
             binding.titleTv.setHorizontalPadding(max(leftPadding, rightPadding))
         } else {
             binding.titleTv.updatePadding(
@@ -308,29 +305,27 @@ class Toolbar @JvmOverloads constructor(
         }
     }
 
-
     private fun calculateTitleLeftPadding(): Int {
-        return if(isLeftButtonVisible) {
+        return if (isLeftButtonVisible) {
             (buttonConfig.buttonContainerSize + titleConfig.horizontalPaddingWithIcon)
         } else {
             titleConfig.horizontalPaddingWithoutIcon
         }
     }
 
-
     private fun calculateTitleRightPadding(): Int {
         var totalPadding = 0
         val buttonContainerSize = buttonConfig.buttonContainerSize
 
-        if(isRightButtonVisible) {
+        if (isRightButtonVisible) {
             totalPadding += buttonContainerSize
         }
 
-        if(isExtraRightButtonVisible) {
+        if (isExtraRightButtonVisible) {
             totalPadding += buttonContainerSize
         }
 
-        totalPadding += if(isRightButtonVisible || isExtraRightButtonVisible) {
+        totalPadding += if (isRightButtonVisible || isExtraRightButtonVisible) {
             titleConfig.horizontalPaddingWithIcon
         } else {
             titleConfig.horizontalPaddingWithoutIcon
@@ -339,23 +334,19 @@ class Toolbar @JvmOverloads constructor(
         return totalPadding
     }
 
-
     private fun updateTitleGravity() {
-        if(!areBothRightButtonsVisible) return
+        if (!areBothRightButtonsVisible) return
 
         // When both right buttons are visible, resetting
         // the gravity to the LEFT value to avoid bad UI
         titleTextGravity = TitleGravity.LEFT
     }
 
-
     private fun checkNewTitleGravity(newTitleGravity: TitleGravity) {
-        val canNotAssignNewTitleGravity = (
-            areBothRightButtonsVisible &&
+        val canNotAssignNewTitleGravity = areBothRightButtonsVisible &&
             (newTitleGravity != TitleGravity.LEFT)
-        )
 
-        if(canNotAssignNewTitleGravity) {
+        if (canNotAssignNewTitleGravity) {
             throw IllegalStateException(
                 """
                 Toolbar does not support setting any other title gravity
@@ -364,7 +355,6 @@ class Toolbar @JvmOverloads constructor(
             )
         }
     }
-
 
     private fun onButtonConfigChanged(newConfig: ButtonConfig) {
         buttonInfos.forEach {
@@ -377,11 +367,9 @@ class Toolbar @JvmOverloads constructor(
         updateTitleHorizontalPadding()
     }
 
-
     private fun onTitleConfigChanged() {
         updateTitleHorizontalPadding()
     }
-
 
     override fun onMeasure(widthMeasureSpec: Int, heightMeasureSpec: Int) {
         super.onMeasure(
@@ -393,10 +381,7 @@ class Toolbar @JvmOverloads constructor(
         )
     }
 
-
     private fun calculateHeight(): Int {
         return (defaultToolbarHeight + verticalPadding)
     }
-
-
 }

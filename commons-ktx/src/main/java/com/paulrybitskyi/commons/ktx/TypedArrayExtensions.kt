@@ -28,16 +28,13 @@ import androidx.annotation.StyleableRes
 import androidx.core.content.res.ResourcesCompat
 import com.paulrybitskyi.commons.SdkInfo
 
-
 fun TypedArray.getString(@StyleableRes index: Int, default: CharSequence = ""): CharSequence {
     return (getString(index) ?: default)
 }
 
-
 fun TypedArray.getDrawable(@StyleableRes index: Int, default: Drawable? = null): Drawable? {
     return (getDrawable(index) ?: default)
 }
-
 
 @SuppressLint("NewApi")
 fun TypedArray.getFont(
@@ -45,7 +42,7 @@ fun TypedArray.getFont(
     @StyleableRes index: Int,
     default: Typeface
 ): Typeface {
-    return if(SdkInfo.IS_AT_LEAST_OREO) {
+    return if (SdkInfo.IS_AT_LEAST_OREO) {
         (getFont(index) ?: default)
     } else {
         getResourceId(index, -1)
@@ -54,7 +51,6 @@ fun TypedArray.getFont(
             ?: default
     }
 }
-
 
 fun TypedArray.getColorStateList(@StyleableRes index: Int, default: ColorStateList): ColorStateList {
     return (getColorStateList(index) ?: default)

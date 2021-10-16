@@ -22,13 +22,12 @@ import android.os.FileObserver
 import com.paulrybitskyi.commons.SdkInfo
 import java.io.File
 
-
 @Suppress("DEPRECATION")
 inline fun File.newFileObserver(
     events: Int = FileObserver.ALL_EVENTS,
     crossinline onEventListener: (Int, String?) -> Unit
 ): FileObserver {
-    return if(SdkInfo.IS_AT_LEAST_10) {
+    return if (SdkInfo.IS_AT_LEAST_10) {
         object : FileObserver(this, events) {
             override fun onEvent(event: Int, path: String?) = onEventListener(event, path)
         }
@@ -39,9 +38,8 @@ inline fun File.newFileObserver(
     }
 }
 
-
 fun File.fileList(): List<File> {
-    if(!isDirectory) return emptyList()
+    if (!isDirectory) return emptyList()
 
     return (listFiles()?.toList() ?: emptyList())
 }

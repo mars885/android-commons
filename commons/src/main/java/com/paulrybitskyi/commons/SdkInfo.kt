@@ -33,5 +33,4 @@ object SdkInfo {
     @JvmField val IS_AT_LEAST_PIE = (SDK_VERSION >= Build.VERSION_CODES.P)
     @JvmField val IS_AT_LEAST_10 = (SDK_VERSION >= Build.VERSION_CODES.Q)
     @JvmField val IS_AT_LEAST_11 = (Build.VERSION.SDK_INT >= Build.VERSION_CODES.R)
-
 }

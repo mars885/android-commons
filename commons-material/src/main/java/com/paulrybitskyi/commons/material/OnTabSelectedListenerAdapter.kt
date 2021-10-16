@@ -25,5 +25,4 @@ interface OnTabSelectedListenerAdapter : TabLayout.OnTabSelectedListener {
     override fun onTabReselected(tab: TabLayout.Tab) {}
 
     override fun onTabUnselected(tab: TabLayout.Tab) {}
-
 }

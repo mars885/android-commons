@@ -21,14 +21,12 @@ package com.paulrybitskyi.commons.ktx
 import android.animation.Animator
 import android.view.ViewPropertyAnimator
 
-
 fun ViewPropertyAnimator.scale(value: Float): ViewPropertyAnimator {
     scaleX(value)
     scaleY(value)
 
     return this
 }
-
 
 fun ViewPropertyAnimator.scaleBy(value: Float): ViewPropertyAnimator {
     scaleXBy(value)
@@ -37,7 +35,6 @@ fun ViewPropertyAnimator.scaleBy(value: Float): ViewPropertyAnimator {
     return this
 }
 
-
 inline fun ViewPropertyAnimator.setListener(
     crossinline onEnd: (animator: Animator) -> Unit = {},
     crossinline onStart: (animator: Animator) -> Unit = {},
@@ -45,12 +42,9 @@ inline fun ViewPropertyAnimator.setListener(
     crossinline onRepeat: (animator: Animator) -> Unit = {}
 ): ViewPropertyAnimator {
     return object : Animator.AnimatorListener {
-
         override fun onAnimationRepeat(animator: Animator) = onRepeat(animator)
         override fun onAnimationEnd(animator: Animator) = onEnd(animator)
         override fun onAnimationCancel(animator: Animator) = onCancel(animator)
         override fun onAnimationStart(animator: Animator) = onStart(animator)
-
-    }
-    .let(::setListener)
+    }.let(::setListener)
 }

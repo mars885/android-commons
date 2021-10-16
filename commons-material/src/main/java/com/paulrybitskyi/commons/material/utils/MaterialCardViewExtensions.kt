@@ -21,7 +21,6 @@ package com.paulrybitskyi.commons.material.utils
 import androidx.annotation.Px
 import com.google.android.material.card.MaterialCardView
 
-
 var MaterialCardView.contentLeftPadding: Int
     set(value) { updateContentPadding(leftPadding = value) }
     get() = contentPaddingLeft
@@ -37,7 +36,6 @@ var MaterialCardView.contentRightPadding: Int
 var MaterialCardView.contentBottomPadding: Int
     set(value) { updateContentPadding(bottomPadding = value) }
     get() = contentPaddingBottom
-
 
 fun MaterialCardView.updateContentPadding(
     @Px leftPadding: Int = this.contentPaddingLeft,

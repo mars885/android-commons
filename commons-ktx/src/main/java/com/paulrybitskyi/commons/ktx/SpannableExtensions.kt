@@ -20,7 +20,6 @@ package com.paulrybitskyi.commons.ktx
 
 import android.text.Spannable
 
-
 operator fun Spannable.set(
     start: Int,
     end: Int,

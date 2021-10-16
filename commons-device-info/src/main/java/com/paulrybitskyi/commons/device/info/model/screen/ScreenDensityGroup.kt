@@ -27,5 +27,4 @@ enum class ScreenDensityGroup(val title: String) {
     XHIGH("XHigh"),
     XXHIGH("XXHigh"),
     XXXHIGH("XXXHigh")
-
 }

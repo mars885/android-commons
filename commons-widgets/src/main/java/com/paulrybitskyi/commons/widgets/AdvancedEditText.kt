@@ -27,9 +27,7 @@ class AdvancedEditText @JvmOverloads constructor(
     defStyleAttr: Int = R.attr.editTextStyle
 ) : AppCompatEditText(context, attrs, defStyleAttr) {
 
-
     private val listeners = mutableListOf<TextWatcher>()
-
 
     fun setInputType(type: Int, shouldNotifyListeners: Boolean = true) {
         performAction(shouldNotifyListeners) {
@@ -37,13 +35,11 @@ class AdvancedEditText @JvmOverloads constructor(
         }
     }
 
-
     fun setText(text: CharSequence, shouldNotifyListeners: Boolean = true) {
         performAction(shouldNotifyListeners) {
             super.setText(text)
         }
     }
-
 
     override fun addTextChangedListener(listener: TextWatcher) {
         listeners.add(listener)
@@ -51,9 +47,8 @@ class AdvancedEditText @JvmOverloads constructor(
         super.addTextChangedListener(listener)
     }
 
-
     override fun removeTextChangedListener(listener: TextWatcher) {
-        if(listeners.isEmpty()) return
+        if (listeners.isEmpty()) return
 
         listeners.indexOf(listener)
             .takeIf { it >= 0 }
@@ -62,23 +57,21 @@ class AdvancedEditText @JvmOverloads constructor(
         super.removeTextChangedListener(listener)
     }
 
-
     fun clearTextChangedListeners() {
-        if(listeners.isEmpty()) return
+        if (listeners.isEmpty()) return
 
-        for(listener in listeners) {
+        for (listener in listeners) {
             super.removeTextChangedListener(listener)
         }
 
         listeners.clear()
     }
 
-
     private fun performAction(
         shouldNotifyListeners: Boolean,
         action: (() -> Unit)
     ) {
-        if(shouldNotifyListeners || listeners.isEmpty()) {
+        if (shouldNotifyListeners || listeners.isEmpty()) {
             action()
             return
         }
@@ -88,10 +81,8 @@ class AdvancedEditText @JvmOverloads constructor(
         clearTextChangedListeners()
         action()
 
-        for(listener in listenersCopy) {
+        for (listener in listenersCopy) {
             addTextChangedListener(listener)
         }
     }
-
-
 }

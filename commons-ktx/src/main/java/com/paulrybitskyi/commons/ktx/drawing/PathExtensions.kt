@@ -21,7 +21,6 @@ package com.paulrybitskyi.commons.ktx.drawing
 import android.graphics.Path
 import android.graphics.PointF
 
-
 fun Path.moveTo(point: PointF) {
     moveTo(point.x, point.y)
 }

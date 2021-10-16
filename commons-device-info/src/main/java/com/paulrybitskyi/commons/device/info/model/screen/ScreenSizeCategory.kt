@@ -23,7 +23,6 @@ enum class ScreenSizeCategory(
     val title: String
 ) {
 
-
     UNDEFINED(
         layoutSize = Configuration.SCREENLAYOUT_SIZE_UNDEFINED,
         title = "Undefined"
@@ -45,7 +44,6 @@ enum class ScreenSizeCategory(
         title = "XLarge"
     );
 
-
     companion object {
 
         @JvmName("forLayoutSize")
@@ -54,8 +52,5 @@ enum class ScreenSizeCategory(
             return values().find { it.layoutSize == this }
                 ?: UNDEFINED
         }
-
     }
-
-
 }

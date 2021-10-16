@@ -23,7 +23,6 @@ import android.content.Intent
 import android.content.pm.PackageManager
 import android.net.Uri
 
-
 /**
  * Tries to figure out a package name of a native application that
  * is able to open the given url.
@@ -51,7 +50,6 @@ fun PackageManager.getNativeAppPackageForUrl(url: String): String? {
         .subtract(resolvedGenericApps)
         .firstOrNull()
 }
-
 
 /**
  * Checks if the given url can be opened by a native application on the device.

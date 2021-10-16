@@ -75,5 +75,4 @@ enum class WindowAnimations(
         windowBEnterAnimation = R.anim.overshoot_scaling_window_b_enter_animation,
         windowBExitAnimation = R.anim.overshoot_scaling_window_b_exit_animation
     );
-
 }

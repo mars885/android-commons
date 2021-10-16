@@ -23,7 +23,6 @@ import androidx.appcompat.widget.AppCompatCheckBox
 import androidx.core.widget.CompoundButtonCompat
 import com.paulrybitskyi.commons.ktx.toColorStateList
 
-
 fun AppCompatCheckBox.setColor(@ColorInt color: Int) {
     CompoundButtonCompat.setButtonTintList(this, color.toColorStateList())
 }

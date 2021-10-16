@@ -46,7 +46,6 @@ import androidx.core.view.updateLayoutParams
 import com.paulrybitskyi.commons.utils.observeChanges
 import kotlin.properties.ReadWriteProperty
 
-
 val View.hasLayoutParams: Boolean
     get() = (layoutParams != null)
 
@@ -114,17 +113,15 @@ val View.horizontalPadding: Int
 val View.verticalPadding: Int
     get() = (topPadding + bottomPadding)
 
-
 fun View.setLayoutParamsSize(size: Int) {
     setLayoutParamsSize(width = size, height = size)
 }
-
 
 fun View.setLayoutParamsSize(
     width: Int = layoutParamsWidth,
     height: Int = layoutParamsHeight
 ) {
-    if(!hasLayoutParams) return
+    if (!hasLayoutParams) return
 
     updateLayoutParams {
         this.width = width
@@ -132,14 +129,13 @@ fun View.setLayoutParamsSize(
     }
 }
 
-
 fun View.setMargins(
     @Px startMargin: Int = this.startMargin,
     @Px topMargin: Int = this.topMargin,
     @Px endMargin: Int = this.endMargin,
     @Px bottomMargin: Int = this.bottomMargin
 ) {
-    if(layoutParams !is ViewGroup.MarginLayoutParams) {
+    if (layoutParams !is ViewGroup.MarginLayoutParams) {
         return
     }
 
@@ -151,16 +147,13 @@ fun View.setMargins(
     }
 }
 
-
 fun View.setHorizontalMargin(@Px margin: Int) {
     setMargins(startMargin = margin, endMargin = margin)
 }
 
-
 fun View.setVerticalMargin(@Px margin: Int) {
     setMargins(topMargin = margin, bottomMargin = margin)
 }
-
 
 fun View.clearMargins() {
     setMargins(
@@ -171,36 +164,29 @@ fun View.clearMargins() {
     )
 }
 
-
 fun View.clearHorizontalMargins() {
     setHorizontalMargin(0)
 }
-
 
 fun View.clearVerticalMargins() {
     setVerticalMargin(0)
 }
 
-
 fun View.clearStartMargin() {
     startMargin = 0
 }
-
 
 fun View.clearTopMargin() {
     topMargin = 0
 }
 
-
 fun View.clearEndMargin() {
     endMargin = 0
 }
 
-
 fun View.clearBottomMargin() {
     bottomMargin = 0
 }
-
 
 fun View.updatePadding(
     @Px startPadding: Int = this.paddingStart,
@@ -211,16 +197,13 @@ fun View.updatePadding(
     setPaddingRelative(startPadding, topPadding, endPadding, bottomPadding)
 }
 
-
 fun View.setHorizontalPadding(@Px padding: Int) {
     updatePadding(startPadding = padding, endPadding = padding)
 }
 
-
 fun View.setVerticalPadding(@Px padding: Int) {
     updatePadding(topPadding = padding, bottomPadding = padding)
 }
-
 
 fun View.clearPadding() {
     updatePadding(
@@ -231,91 +214,73 @@ fun View.clearPadding() {
     )
 }
 
-
 fun View.clearHorizontalPadding() {
     setHorizontalPadding(0)
 }
-
 
 fun View.clearVerticalPadding() {
     setVerticalPadding(0)
 }
 
-
 fun View.clearStartPadding() {
     startPadding = 0
 }
-
 
 fun View.clearTopPadding() {
     topPadding = 0
 }
 
-
 fun View.clearEndPadding() {
     endPadding = 0
 }
-
 
 fun View.clearBottomPadding() {
     bottomPadding = 0
 }
 
-
 fun <T : ViewGroup.LayoutParams> View.toLayoutParams(): T {
     return (layoutParams as T)
 }
-
 
 fun View.getColor(@ColorRes colorId: Int): Int {
     return context.getCompatColor(colorId)
 }
 
-
 fun View.getDimensionPixelSize(@DimenRes dimenId: Int): Int {
     return context.getDimensionPixelSize(dimenId)
 }
-
 
 fun View.getInteger(@IntegerRes intId: Int): Int {
     return context.getInteger(intId)
 }
 
-
 fun View.getDimension(@DimenRes dimenId: Int): Float {
     return context.getDimension(dimenId)
 }
-
 
 fun View.getFloat(@IntegerRes floatId: Int): Float {
     return context.getFloat(floatId)
 }
 
-
 fun View.getFont(@FontRes fontId: Int): Typeface? {
     return context.getFont(fontId)
 }
-
 
 fun View.getString(@StringRes stringId: Int): String {
     return context.getString(stringId)
 }
 
-
 fun View.getString(@StringRes stringId: Int, vararg args: Any): String {
     return context.getString(stringId, *args)
 }
-
 
 fun View.getDrawable(@DrawableRes drawableId: Int): Drawable? {
     return context.getCompatDrawable(drawableId)
 }
 
-
 fun View.getColoredDrawable(@DrawableRes drawableId: Int, @ColorInt color: Int): Drawable? {
     return context.getColoredDrawable(drawableId, color)
 }
-
 
 fun View.getColoredStrokeDrawable(
     @DrawableRes drawableId: Int,
@@ -326,7 +291,6 @@ fun View.getColoredStrokeDrawable(
         ?.run { mutate() as? GradientDrawable }
         ?.apply { setStroke(strokeWidth, strokeColor) }
 }
-
 
 fun View.inflateView(
     @LayoutRes layoutResourceId: Int,
@@ -340,41 +304,33 @@ fun View.inflateView(
     )
 }
 
-
 fun View.showShortToast(message: CharSequence): Toast {
     return context.showShortToast(message)
 }
-
 
 fun View.showLongToast(message: CharSequence): Toast {
     return context.showLongToast(message)
 }
 
-
 fun View.makeVisible() {
     isVisible = true
 }
-
 
 fun View.makeInvisible() {
     isInvisible = true
 }
 
-
 fun View.makeGone() {
     isGone = true
 }
-
 
 fun View.removeElevation() {
     elevation = 0f
 }
 
-
 fun View.onClick(action: (View) -> Unit) {
     setOnClickListener(action)
 }
-
 
 /**
  * Enables the view by setting its [View.isEnabled] property
@@ -392,21 +348,20 @@ fun View.enable(
     alpha: Float = 1f,
     childrenToo: Boolean = false
 ) {
-    if(!isEnabled) {
+    if (!isEnabled) {
         isEnabled = true
 
-        if(changeAlpha) {
+        if (changeAlpha) {
             setAlpha(alpha)
         }
 
-        if(childrenToo && (this is ViewGroup)) {
-            for(child in children) {
+        if (childrenToo && (this is ViewGroup)) {
+            for (child in children) {
                 child.enable(changeAlpha, alpha, childrenToo)
             }
         }
     }
 }
-
 
 /**
  * Disables the view by setting its [View.isEnabled] property
@@ -424,21 +379,20 @@ fun View.disable(
     alpha: Float = 0.5f,
     childrenToo: Boolean = false
 ) {
-    if(isEnabled) {
+    if (isEnabled) {
         isEnabled = false
 
-        if(changeAlpha) {
+        if (changeAlpha) {
             setAlpha(alpha)
         }
 
-        if(childrenToo && (this is ViewGroup)) {
-            for(child in children) {
+        if (childrenToo && (this is ViewGroup)) {
+            for (child in children) {
                 child.disable(changeAlpha, alpha, childrenToo)
             }
         }
     }
 }
-
 
 /**
  * Sets the horizontal and vertical scale of the view.
@@ -450,26 +404,21 @@ fun View.setScale(scale: Float) {
     scaleY = scale
 }
 
-
 fun View.postAction(action: () -> Unit) {
     post(action)
 }
-
 
 fun View.postActionDelayed(timeInMillis: Long, action: () -> Unit) {
     postDelayed(action, timeInMillis)
 }
 
-
 fun <T> View.invalidateOnChange(initialValue: T): ReadWriteProperty<Any, T> {
-    return observeChanges(initialValue) {  _, _ -> invalidate() }
+    return observeChanges(initialValue) { _, _ -> invalidate() }
 }
-
 
 fun <T> View.relayoutOnChange(initialValue: T): ReadWriteProperty<Any, T> {
-    return observeChanges(initialValue) {  _, _ -> requestLayout() }
+    return observeChanges(initialValue) { _, _ -> requestLayout() }
 }
-
 
 fun View.detachFromParent() {
     (this.parent as? ViewGroup)?.removeView(this)

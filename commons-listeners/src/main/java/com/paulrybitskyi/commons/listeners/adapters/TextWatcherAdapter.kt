@@ -26,5 +26,4 @@ interface TextWatcherAdapter : TextWatcher {
     override fun onTextChanged(text: CharSequence, start: Int, before: Int, count: Int) {}
 
     override fun afterTextChanged(editable: Editable) {}
-
 }

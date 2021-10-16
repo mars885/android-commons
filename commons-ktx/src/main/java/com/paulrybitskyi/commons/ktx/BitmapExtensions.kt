@@ -21,13 +21,11 @@ package com.paulrybitskyi.commons.ktx
 import android.graphics.Bitmap
 import android.graphics.Color
 
-
 val Bitmap.centerX: Float
     get() = (width / 2f)
 
 val Bitmap.centerY: Float
     get() = (height / 2f)
-
 
 /**
  * Checks whether the bitmap has any transparent pixels.
@@ -36,9 +34,9 @@ val Bitmap.centerY: Float
  * main thread since it may take some time to finish.
  */
 fun Bitmap.hasTransparentPixels(): Boolean {
-    for(x in 0 until width) {
-        for(y in 0 until height) {
-            if(getPixel(x, y) == Color.TRANSPARENT) {
+    for (x in 0 until width) {
+        for (y in 0 until height) {
+            if (getPixel(x, y) == Color.TRANSPARENT) {
                 return true
             }
         }

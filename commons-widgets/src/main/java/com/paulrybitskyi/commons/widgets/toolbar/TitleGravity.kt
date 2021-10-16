@@ -23,7 +23,6 @@ enum class TitleGravity(
     internal val gravity: Int
 ) {
 
-
     LEFT(
         id = 1,
         gravity = Gravity.START
@@ -37,7 +36,6 @@ enum class TitleGravity(
         gravity = Gravity.END
     );
 
-
     companion object {
 
         @JvmName("forId")
@@ -46,8 +44,5 @@ enum class TitleGravity(
             return values().find { it.id == this }
                 ?: throw IllegalArgumentException("Could not find the title gravity for the specified ID: $this.")
         }
-
     }
-
-
 }
