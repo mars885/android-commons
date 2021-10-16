@@ -51,6 +51,14 @@ allprojects {
         mavenCentral()
         google()
     }
+
+    configure<org.jlleitschuh.gradle.ktlint.KtlintExtension> {
+        android.set(true)
+        outputToConsole.set(true)
+        reporters {
+            reporter(org.jlleitschuh.gradle.ktlint.reporter.ReporterType.HTML)
+        }
+    }
 }
 
 val clean by tasks.registering(Delete::class) {
