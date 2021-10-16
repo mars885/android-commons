@@ -42,11 +42,9 @@ inline fun ViewPropertyAnimator.setListener(
     crossinline onRepeat: (animator: Animator) -> Unit = {}
 ): ViewPropertyAnimator {
     return object : Animator.AnimatorListener {
-
         override fun onAnimationRepeat(animator: Animator) = onRepeat(animator)
         override fun onAnimationEnd(animator: Animator) = onEnd(animator)
         override fun onAnimationCancel(animator: Animator) = onCancel(animator)
         override fun onAnimationStart(animator: Animator) = onStart(animator)
-    }
-        .let(::setListener)
+    }.let(::setListener)
 }

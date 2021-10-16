@@ -29,11 +29,6 @@ fun Menu.addItem(
     groupId: Int = Menu.NONE,
     order: Int = Menu.NONE
 ): MenuItem {
-    return add(
-        groupId,
-        id,
-        order,
-        title
-    )
+    return add(groupId, id, order, title)
         .apply { this.icon = icon }
 }

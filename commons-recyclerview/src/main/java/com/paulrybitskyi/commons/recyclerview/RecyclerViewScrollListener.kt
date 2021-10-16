@@ -74,10 +74,8 @@ class RecyclerViewScrollListener constructor(
     }
 
     private fun isBottomReached(): Boolean {
-        return (
-            (lastVisiblePosition == (totalItemCount - 1)) &&
-                ((lastVisiblePosition != previousLastVisiblePosition) || shouldNotifyOnReachingEnds())
-            )
+        return (lastVisiblePosition == (totalItemCount - 1)) &&
+            ((lastVisiblePosition != previousLastVisiblePosition) || shouldNotifyOnReachingEnds())
     }
 
     private fun onBottomReached(recyclerView: RecyclerView) {
@@ -114,10 +112,8 @@ class RecyclerViewScrollListener constructor(
     }
 
     private fun isTopReached(): Boolean {
-        return (
-            (firstVisiblePosition == 0) &&
-                ((firstVisiblePosition != previousFirstVisiblePosition) || shouldNotifyOnReachingEnds())
-            )
+        return (firstVisiblePosition == 0) &&
+            ((firstVisiblePosition != previousFirstVisiblePosition) || shouldNotifyOnReachingEnds())
     }
 
     private fun onTopReached(recyclerView: RecyclerView) {
