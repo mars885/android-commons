@@ -70,34 +70,34 @@ object publishingConfig {
 
     // Artifact specifics
     const val commonsCoreArtifactName = "commons-core"
-    const val commonsCoreArtifactVersion = "1.0.2"
+    const val commonsCoreArtifactVersion = "1.0.3"
 
     const val commonsDeviceInfoArtifactName = "commons-device-info"
-    const val commonsDeviceInfoArtifactVersion = "1.0.0"
+    const val commonsDeviceInfoArtifactVersion = "1.0.1"
 
     const val commonsKtxArtifactName = "commons-ktx"
-    const val commonsKtxArtifactVersion = "1.0.2"
+    const val commonsKtxArtifactVersion = "1.0.3"
 
     const val commonsListenersArtifactName = "commons-listeners"
-    const val commonsListenersArtifactVersion = "1.0.1"
+    const val commonsListenersArtifactVersion = "1.0.2"
 
     const val commonsMaterialArtifactName = "commons-material"
-    const val commonsMaterialArtifactVersion = "1.0.1"
+    const val commonsMaterialArtifactVersion = "1.0.2"
 
     const val commonsNavigationArtifactName = "commons-navigation"
-    const val commonsNavigationArtifactVersion = "1.0.1"
+    const val commonsNavigationArtifactVersion = "1.0.2"
 
     const val commonsNetworkArtifactName = "commons-network"
-    const val commonsNetworkArtifactVersion = "1.0.1"
+    const val commonsNetworkArtifactVersion = "1.0.2"
 
     const val commonsRecyclerViewArtifactName = "commons-recyclerview"
-    const val commonsRecyclerViewArtifactVersion = "1.0.0"
+    const val commonsRecyclerViewArtifactVersion = "1.0.1"
 
     const val commonsWidgetsArtifactName = "commons-widgets"
-    const val commonsWidgetsArtifactVersion = "1.0.1"
+    const val commonsWidgetsArtifactVersion = "1.0.2"
 
     const val commonsWindowAnimsArtifactName = "commons-window-anims"
-    const val commonsWindowAnimsArtifactVersion = "1.0.0"
+    const val commonsWindowAnimsArtifactVersion = "1.0.1"
 
     var artifactName = ""
     var artifactVersion = ""
