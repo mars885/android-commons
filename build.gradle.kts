@@ -16,6 +16,7 @@
 
 plugins {
     detekt()
+    ktlint()
     gradleVersions()
     dokka()
 }
@@ -44,6 +45,7 @@ detekt {
 
 allprojects {
     apply(plugin = PLUGIN_DETEKT)
+    apply(plugin = PLUGIN_KTLINT)
 
     repositories {
         mavenCentral()
