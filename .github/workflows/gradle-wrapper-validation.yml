@@ -7,7 +7,8 @@ on:
     branches: [ master ]
 
 jobs:
-  validation:
+  gradle-wrapper-validation:
+    name: Gradle Wrapper Validation
     runs-on: ubuntu-latest
     if: ${{ !contains(github.event.head_commit.message, '[ci skip]') }}
 
