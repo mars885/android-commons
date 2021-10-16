@@ -15,6 +15,7 @@
  */
 
 plugins {
+    detekt()
     gradleVersions()
     dokka()
 }
@@ -23,6 +24,7 @@ buildscript {
     repositories {
         mavenCentral()
         google()
+        gradlePluginPortal()
     }
 
     dependencies {
@@ -33,7 +35,16 @@ buildscript {
     }
 }
 
+detekt {
+    parallel = true
+    buildUponDefaultConfig = true
+    config = files("config/detekt/detekt.yml")
+    reports.html.enabled = true
+}
+
 allprojects {
+    apply(plugin = PLUGIN_DETEKT)
+
     repositories {
         mavenCentral()
         google()

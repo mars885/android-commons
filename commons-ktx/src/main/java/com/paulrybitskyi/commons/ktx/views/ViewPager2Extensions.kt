@@ -30,7 +30,11 @@ val ViewPager2.recyclerView: RecyclerView?
 inline fun ViewPager2.registerOnPageChangeCallback(
     crossinline onPageSelected: (position: Int) -> Unit = {},
     crossinline onPageScrollStateChanged: (state: Int) -> Unit = {},
-    crossinline onPageScrolled: (position: Int, positionOffset: Float, positionOffsetPixels: Int) -> Unit = { _, _, _ -> }
+    crossinline onPageScrolled: (
+        position: Int,
+        positionOffset: Float,
+        positionOffsetPixels: Int
+    ) -> Unit = { _, _, _ -> }
 ): ViewPager2.OnPageChangeCallback {
     return object : ViewPager2.OnPageChangeCallback() {
 

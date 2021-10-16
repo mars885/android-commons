@@ -21,14 +21,20 @@ package com.paulrybitskyi.commons.network
 import android.Manifest
 import android.content.Context
 import android.net.ConnectivityManager
-import android.net.NetworkCapabilities.*
+import android.net.NetworkCapabilities.TRANSPORT_CELLULAR
+import android.net.NetworkCapabilities.TRANSPORT_ETHERNET
+import android.net.NetworkCapabilities.TRANSPORT_WIFI
 import android.net.NetworkRequest
 import androidx.annotation.RequiresPermission
 import com.paulrybitskyi.commons.SdkInfo
 import com.paulrybitskyi.commons.ktx.getSystemService
 import com.paulrybitskyi.commons.network.model.NetworkInfo
 import com.paulrybitskyi.commons.network.model.NetworkType
-import com.paulrybitskyi.commons.network.utils.*
+import com.paulrybitskyi.commons.network.utils.LegacyNetworkTypeProvider
+import com.paulrybitskyi.commons.network.utils.NetworkCallback
+import com.paulrybitskyi.commons.network.utils.NetworkListener
+import com.paulrybitskyi.commons.network.utils.NetworkTypeProvider
+import com.paulrybitskyi.commons.network.utils.NewNetworkTypeProvider
 
 
 @get:Suppress("DEPRECATION")

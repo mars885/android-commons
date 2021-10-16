@@ -23,10 +23,10 @@ import android.graphics.Color
 
 
 val Bitmap.centerX: Float
-    get() = (width * 0.5f)
+    get() = (width / 2f)
 
 val Bitmap.centerY: Float
-    get() = (height * 0.5f)
+    get() = (height / 2f)
 
 
 /**

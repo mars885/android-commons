@@ -15,19 +15,34 @@
  */
 
 @file:JvmName("ViewUtils")
-@file:Suppress("UNCHECKED_CAST")
+@file:Suppress("UNCHECKED_CAST", "TooManyFunctions")
 
 package com.paulrybitskyi.commons.ktx
 
 import android.graphics.Typeface
 import android.graphics.drawable.Drawable
 import android.graphics.drawable.GradientDrawable
-import android.util.TypedValue
 import android.view.View
 import android.view.ViewGroup
 import android.widget.Toast
-import androidx.annotation.*
-import androidx.core.view.*
+import androidx.annotation.ColorInt
+import androidx.annotation.ColorRes
+import androidx.annotation.DimenRes
+import androidx.annotation.DrawableRes
+import androidx.annotation.FontRes
+import androidx.annotation.IntegerRes
+import androidx.annotation.LayoutRes
+import androidx.annotation.Px
+import androidx.annotation.StringRes
+import androidx.core.view.children
+import androidx.core.view.isGone
+import androidx.core.view.isInvisible
+import androidx.core.view.isVisible
+import androidx.core.view.marginBottom
+import androidx.core.view.marginEnd
+import androidx.core.view.marginStart
+import androidx.core.view.marginTop
+import androidx.core.view.updateLayoutParams
 import com.paulrybitskyi.commons.utils.observeChanges
 import kotlin.properties.ReadWriteProperty
 

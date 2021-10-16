@@ -24,7 +24,11 @@ import androidx.viewpager.widget.ViewPager
 inline fun ViewPager.addOnPageChangeListener(
     crossinline onPageSelected: (position: Int) -> Unit = {},
     crossinline onPageScrollStateChanged: (state: Int) -> Unit = {},
-    crossinline onPageScrolled: (position: Int, positionOffset: Float, positionOffsetPixels: Int) -> Unit = { _, _, _ -> }
+    crossinline onPageScrolled: (
+        position: Int,
+        positionOffset: Float,
+        positionOffsetPixels: Int
+    ) -> Unit = { _, _, _ -> }
 ): ViewPager.OnPageChangeListener {
     return object : ViewPager.OnPageChangeListener {
 

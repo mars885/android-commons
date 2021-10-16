@@ -28,7 +28,20 @@ import androidx.annotation.ColorInt
 import androidx.core.content.withStyledAttributes
 import androidx.core.view.isVisible
 import androidx.core.view.setPadding
-import com.paulrybitskyi.commons.ktx.*
+import com.paulrybitskyi.commons.ktx.clearEndMargin
+import com.paulrybitskyi.commons.ktx.endMargin
+import com.paulrybitskyi.commons.ktx.getColor
+import com.paulrybitskyi.commons.ktx.getDimension
+import com.paulrybitskyi.commons.ktx.getDimensionPixelSize
+import com.paulrybitskyi.commons.ktx.getFont
+import com.paulrybitskyi.commons.ktx.getString
+import com.paulrybitskyi.commons.ktx.layoutInflater
+import com.paulrybitskyi.commons.ktx.onClick
+import com.paulrybitskyi.commons.ktx.setColor
+import com.paulrybitskyi.commons.ktx.setHorizontalPadding
+import com.paulrybitskyi.commons.ktx.setLayoutParamsSize
+import com.paulrybitskyi.commons.ktx.updatePadding
+import com.paulrybitskyi.commons.ktx.verticalPadding
 import com.paulrybitskyi.commons.ktx.views.setTextSizeInPx
 import com.paulrybitskyi.commons.utils.observeChanges
 import com.paulrybitskyi.commons.widgets.R
@@ -252,7 +265,8 @@ class Toolbar @JvmOverloads constructor(
             titleTextColor = getColor(R.styleable.CustomToolbar_toolbar_titleTextColor, titleTextColor)
             titleTextSize = getDimension(R.styleable.CustomToolbar_toolbar_titleTextSize, titleTextSize)
             titleTextTypeface = getFont(context, R.styleable.CustomToolbar_toolbar_titleTextFont, titleTextTypeface)
-            titleTextGravity = getInt(R.styleable.CustomToolbar_toolbar_titleTextGravity, titleTextGravity.id).asTitleGravity()
+            titleTextGravity = getInt(R.styleable.CustomToolbar_toolbar_titleTextGravity, titleTextGravity.id)
+                .asTitleGravity()
         }
     }
 

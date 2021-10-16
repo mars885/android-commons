@@ -26,6 +26,13 @@ import androidx.annotation.FloatRange
 import kotlin.math.roundToInt
 
 
+private const val COLOR_ALPHA_MAX = 255
+private const val COLOR_ALPHA_MIN = 0
+
+@Suppress("ReplaceRangeToWithUntil", "MagicNumber")
+private val COLOR_ALPHA_TRANSLUCENT_RANGE = (COLOR_ALPHA_MIN + 1)..(COLOR_ALPHA_MAX - 1)
+
+
 val Int.isEven: Boolean
     get() = ((this and 1) == 0)
 
@@ -39,13 +46,13 @@ val Long.isOdd: Boolean
     get() = !isEven
 
 val Int.isOpaque: Boolean
-    get() = (Color.alpha(this) == 255)
+    get() = (Color.alpha(this) == COLOR_ALPHA_MAX)
 
 val Int.isTransparent: Boolean
-    get() = (Color.alpha(this) == 0)
+    get() = (Color.alpha(this) == COLOR_ALPHA_MIN)
 
 val Int.isTranslucent: Boolean
-    get() = (Color.alpha(this) in 2..254)
+    get() = (Color.alpha(this) in COLOR_ALPHA_TRANSLUCENT_RANGE)
 
 
 fun Int.dpToPx(context: Context): Int {
@@ -102,7 +109,7 @@ fun Int.containsBits(bits: Int): Boolean {
  * @return The color with adjusted alpha
  */
 fun @receiver:ColorInt Int.adjustAlpha(@FloatRange(from = 0.0, to = 1.0) alpha: Float): Int {
-    val alphaChannel = (255 * alpha).toInt()
+    val alphaChannel = (COLOR_ALPHA_MAX * alpha).toInt()
     val redChannel = Color.red(this)
     val greenChannel = Color.green(this)
     val blueChannel = Color.blue(this)
