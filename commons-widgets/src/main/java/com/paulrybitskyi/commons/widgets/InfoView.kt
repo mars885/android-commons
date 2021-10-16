@@ -26,7 +26,14 @@ import android.widget.LinearLayout
 import androidx.annotation.ColorInt
 import androidx.core.content.withStyledAttributes
 import androidx.core.view.isVisible
-import com.paulrybitskyi.commons.ktx.*
+import com.paulrybitskyi.commons.ktx.getColor
+import com.paulrybitskyi.commons.ktx.getDimensionPixelSize
+import com.paulrybitskyi.commons.ktx.getFont
+import com.paulrybitskyi.commons.ktx.getString
+import com.paulrybitskyi.commons.ktx.layoutInflater
+import com.paulrybitskyi.commons.ktx.setColor
+import com.paulrybitskyi.commons.ktx.setLayoutParamsSize
+import com.paulrybitskyi.commons.ktx.topMargin
 import com.paulrybitskyi.commons.ktx.views.setSingleLineTextEnabled
 import com.paulrybitskyi.commons.ktx.views.setTextSizeInPx
 import com.paulrybitskyi.commons.widgets.databinding.ViewInfoBinding
@@ -138,13 +145,23 @@ class InfoView @JvmOverloads constructor(
             iconSize = getDimensionPixelSize(R.styleable.InfoView_infoView_iconSize, iconSize)
             titleTextSize = getDimension(R.styleable.InfoView_infoView_titleTextSize, titleTextSize)
             descriptionTextSize = getDimension(R.styleable.InfoView_infoView_descriptionTextSize, descriptionTextSize)
-            titleTextTopMargin = getDimensionPixelSize(R.styleable.InfoView_infoView_titleTextTopMargin, titleTextTopMargin)
-            descriptionTextTopMargin = getDimensionPixelSize(R.styleable.InfoView_infoView_descriptionTextTopMargin, descriptionTextTopMargin)
+            titleTextTopMargin = getDimensionPixelSize(
+                R.styleable.InfoView_infoView_titleTextTopMargin,
+                titleTextTopMargin
+            )
+            descriptionTextTopMargin = getDimensionPixelSize(
+                R.styleable.InfoView_infoView_descriptionTextTopMargin,
+                descriptionTextTopMargin
+            )
             iconColor = getColor(R.styleable.InfoView_infoView_iconColor, iconColor)
             titleTextColor = getColor(R.styleable.InfoView_infoView_titleTextColor, titleTextColor)
             descriptionTextColor = getColor(R.styleable.InfoView_infoView_descriptionTextColor, descriptionTextColor)
             titleTextTypeface = getFont(context, R.styleable.InfoView_infoView_titleTextFont, titleTextTypeface)
-            descriptionTextTypeface = getFont(context, R.styleable.InfoView_infoView_descriptionTextFont, descriptionTextTypeface)
+            descriptionTextTypeface = getFont(
+                context,
+                R.styleable.InfoView_infoView_descriptionTextFont,
+                descriptionTextTypeface
+            )
             icon = getDrawable(R.styleable.InfoView_infoView_icon)
             titleText = getString(R.styleable.InfoView_infoView_titleText, titleText)
             descriptionText = getString(R.styleable.InfoView_infoView_descriptionText, descriptionText)

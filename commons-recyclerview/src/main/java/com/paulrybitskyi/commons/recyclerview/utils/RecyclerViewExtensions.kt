@@ -24,6 +24,7 @@ import com.paulrybitskyi.commons.recyclerview.RecyclerViewScrollListener
 import com.paulrybitskyi.commons.recyclerview.RecyclerViewScrollListener.Direction
 
 
+@Suppress("LongParameterList")
 inline fun RecyclerView.addOnScrollListener(
     shouldNotifyOnReachingEndsRepeatedly: Boolean = false,
     crossinline onScrolledUpwards: (recyclerView: RecyclerView, deltaY: Int) -> Unit = { _, _ -> },
@@ -34,11 +35,25 @@ inline fun RecyclerView.addOnScrollListener(
 ): RecyclerView.OnScrollListener {
     val stateListener = object : RecyclerViewScrollListener.StateListener {
 
-        override fun onScrolledUpwards(recyclerView: RecyclerView, deltaY: Int) = onScrolledUpwards(recyclerView, deltaY)
-        override fun onScrolledDownwards(recyclerView: RecyclerView, deltaY: Int) = onScrolledDownwards(recyclerView, deltaY)
-        override fun onTopReached(recyclerView: RecyclerView, reachedCompletely: Boolean) = onTopReached(recyclerView, reachedCompletely)
-        override fun onMiddleReached(recyclerView: RecyclerView, direction: Direction) = onMiddleReached(recyclerView, direction)
-        override fun onBottomReached(recyclerView: RecyclerView, reachedCompletely: Boolean) = onBottomReached(recyclerView, reachedCompletely)
+        override fun onScrolledUpwards(recyclerView: RecyclerView, deltaY: Int) {
+            onScrolledUpwards(recyclerView, deltaY)
+        }
+
+        override fun onScrolledDownwards(recyclerView: RecyclerView, deltaY: Int) {
+            onScrolledDownwards(recyclerView, deltaY)
+        }
+
+        override fun onTopReached(recyclerView: RecyclerView, reachedCompletely: Boolean) {
+            onTopReached(recyclerView, reachedCompletely)
+        }
+
+        override fun onMiddleReached(recyclerView: RecyclerView, direction: Direction) {
+            onMiddleReached(recyclerView, direction)
+        }
+
+        override fun onBottomReached(recyclerView: RecyclerView, reachedCompletely: Boolean) {
+            onBottomReached(recyclerView, reachedCompletely)
+        }
 
     }
 

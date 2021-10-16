@@ -15,6 +15,7 @@
  */
 
 @file:JvmName("ContextUtils")
+@file:Suppress("TooManyFunctions")
 
 package com.paulrybitskyi.commons.ktx
 
@@ -32,7 +33,13 @@ import android.view.LayoutInflater
 import android.view.View
 import android.view.ViewGroup
 import android.widget.Toast
-import androidx.annotation.*
+import androidx.annotation.ColorInt
+import androidx.annotation.ColorRes
+import androidx.annotation.DimenRes
+import androidx.annotation.DrawableRes
+import androidx.annotation.FontRes
+import androidx.annotation.IntegerRes
+import androidx.annotation.LayoutRes
 import androidx.appcompat.content.res.AppCompatResources
 import androidx.core.app.NotificationManagerCompat
 import androidx.core.content.ContextCompat

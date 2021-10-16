@@ -15,6 +15,7 @@
  */
 
 @file:JvmName("FragmentUtils")
+@file:Suppress("TooManyFunctions")
 
 package com.paulrybitskyi.commons.ktx
 
@@ -25,7 +26,12 @@ import android.view.Window
 import android.widget.Toast
 import androidx.activity.OnBackPressedCallback
 import androidx.activity.addCallback
-import androidx.annotation.*
+import androidx.annotation.ColorInt
+import androidx.annotation.ColorRes
+import androidx.annotation.DimenRes
+import androidx.annotation.DrawableRes
+import androidx.annotation.FontRes
+import androidx.annotation.IntegerRes
 import androidx.fragment.app.Fragment
 
 

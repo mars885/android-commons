@@ -29,10 +29,10 @@ val Rect.halfHeight: Int
     get() = (height() / 2)
 
 val RectF.halfWidth: Float
-    get() = (width() * 0.5f)
+    get() = (width() / 2f)
 
 val RectF.halfHeight: Float
-    get() = (height() * 0.5f)
+    get() = (height() / 2f)
 
 
 fun Rect.setBounds(

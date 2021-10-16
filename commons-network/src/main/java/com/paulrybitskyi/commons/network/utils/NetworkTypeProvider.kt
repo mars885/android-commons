@@ -18,9 +18,13 @@ package com.paulrybitskyi.commons.network.utils
 
 import android.Manifest
 import android.net.ConnectivityManager
-import android.net.ConnectivityManager.*
+import android.net.ConnectivityManager.TYPE_ETHERNET
+import android.net.ConnectivityManager.TYPE_MOBILE
+import android.net.ConnectivityManager.TYPE_WIFI
 import android.net.Network
-import android.net.NetworkCapabilities.*
+import android.net.NetworkCapabilities.TRANSPORT_CELLULAR
+import android.net.NetworkCapabilities.TRANSPORT_ETHERNET
+import android.net.NetworkCapabilities.TRANSPORT_WIFI
 import android.net.NetworkInfo
 import android.os.Build
 import androidx.annotation.RequiresApi

@@ -26,7 +26,7 @@ val String.isColor: Boolean
     get() = try {
         Color.parseColor(this)
         true
-    } catch(exception: Throwable) {
+    } catch(ignore: Throwable) {
         false
     }
 

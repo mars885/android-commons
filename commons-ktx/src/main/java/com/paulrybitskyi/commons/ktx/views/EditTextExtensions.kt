@@ -71,7 +71,7 @@ fun EditText.setCursorDrawable(drawable: Drawable) {
             cursorDrawableFieldOwner,
             arrayOf(drawable, drawable)
         )
-    } catch (exception: Exception) {
+    } catch (ignore: Exception) {
         // Ignore
     }
 }

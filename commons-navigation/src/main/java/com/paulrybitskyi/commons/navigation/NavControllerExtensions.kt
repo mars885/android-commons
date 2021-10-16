@@ -27,7 +27,7 @@ fun NavController.containsDestination(@IdRes destinationId: Int): Boolean {
     return try {
         getBackStackEntry(destinationId)
         true
-    } catch(exception: Exception) {
+    } catch(ignore: Exception) {
         false
     }
 }
@@ -41,7 +41,7 @@ fun NavController.containsAnyDestination(@IdRes destinationIds: List<Int>): Bool
 fun NavController.getDestinationArgs(@IdRes destinationId: Int): Bundle? {
     return try {
         getBackStackEntry(destinationId).arguments
-    } catch(exception: Exception) {
+    } catch(ignore: Exception) {
         null
     }
 }
