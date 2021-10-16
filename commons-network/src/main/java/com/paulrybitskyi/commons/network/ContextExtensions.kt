@@ -104,7 +104,8 @@ inline fun Context.registerNetworkListener(
     return object : NetworkListener {
         override fun onNetworkConnected(networkType: NetworkType) = onNetworkConnected(networkType)
         override fun onNetworkDisconnected(networkType: NetworkType) = onNetworkDisconnected(networkType)
-    }.let(::registerNetworkListener)
+    }
+    .let(::registerNetworkListener)
 }
 
 private fun buildDefaultNetworkRequest(): NetworkRequest {

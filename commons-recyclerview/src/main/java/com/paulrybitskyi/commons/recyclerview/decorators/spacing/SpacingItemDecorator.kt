@@ -78,7 +78,6 @@ open class SpacingItemDecorator @JvmOverloads constructor(
     open fun shouldAssignSpacing(view: View, parent: RecyclerView): Boolean = true
 
     interface ItemExclusionPolicy {
-
         fun shouldExclude(view: View, parent: RecyclerView): Boolean
     }
 }

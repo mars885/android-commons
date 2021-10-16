@@ -37,6 +37,7 @@ inline fun MotionLayout.addTransitionListener(
     crossinline onTransitionTrigger: (triggerId: Int, positive: Boolean, progress: Float) -> Unit = { _, _, _ -> }
 ): MotionLayout.TransitionListener {
     return object : MotionLayout.TransitionListener {
+
         override fun onTransitionStarted(ml: MotionLayout, startId: Int, endId: Int) {
             onTransitionStarted(startId, endId)
         }
@@ -57,5 +58,6 @@ inline fun MotionLayout.addTransitionListener(
         ) {
             onTransitionTrigger(triggerId, positive, progress)
         }
-    }.also(::addTransitionListener)
+    }
+    .also(::addTransitionListener)
 }
