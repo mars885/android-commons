@@ -37,16 +37,16 @@ buildscript {
 ````groovy
 dependencies {
     //...
-    implementation "com.paulrybitskyi.commons:commons-core:1.0.2"
-    implementation "com.paulrybitskyi.commons:commons-ktx:1.0.2"
-    implementation "com.paulrybitskyi.commons:commons-window-anims:1.0.0"
-    implementation "com.paulrybitskyi.commons:commons-recyclerview:1.0.0"
-    implementation "com.paulrybitskyi.commons:commons-material:1.0.1"
-    implementation "com.paulrybitskyi.commons:commons-navigation:1.0.1"
-    implementation "com.paulrybitskyi.commons:commons-device-info:1.0.0"
-    implementation "com.paulrybitskyi.commons:commons-network:1.0.1"
-    implementation "com.paulrybitskyi.commons:commons-widgets:1.0.1"
-    implementation "com.paulrybitskyi.commons:commons-listeners:1.0.1"
+    implementation "com.paulrybitskyi.commons:commons-core:1.0.3"
+    implementation "com.paulrybitskyi.commons:commons-ktx:1.0.3"
+    implementation "com.paulrybitskyi.commons:commons-window-anims:1.0.1"
+    implementation "com.paulrybitskyi.commons:commons-recyclerview:1.0.1"
+    implementation "com.paulrybitskyi.commons:commons-material:1.0.2"
+    implementation "com.paulrybitskyi.commons:commons-navigation:1.0.2"
+    implementation "com.paulrybitskyi.commons:commons-device-info:1.0.1"
+    implementation "com.paulrybitskyi.commons:commons-network:1.0.2"
+    implementation "com.paulrybitskyi.commons:commons-widgets:1.0.2"
+    implementation "com.paulrybitskyi.commons:commons-listeners:1.0.2"
     //...
 }
 ````
