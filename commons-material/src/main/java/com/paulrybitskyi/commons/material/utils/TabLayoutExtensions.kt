@@ -29,5 +29,6 @@ inline fun TabLayout.addOnTabSelectedListener(
         override fun onTabSelected(tab: TabLayout.Tab) = onTabSelected(tab)
         override fun onTabReselected(tab: TabLayout.Tab) = onTabReselected(tab)
         override fun onTabUnselected(tab: TabLayout.Tab) = onTabUnselected(tab)
-    }.also(::addOnTabSelectedListener)
+    }
+    .also(::addOnTabSelectedListener)
 }

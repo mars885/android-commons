@@ -58,7 +58,8 @@ inline fun RecyclerView.addOnScrollListener(
     return RecyclerViewScrollListener(
         stateListener = stateListener,
         shouldNotifyOnReachingEndsRepeatedly = shouldNotifyOnReachingEndsRepeatedly
-    ).also(::addOnScrollListener)
+    )
+    .also(::addOnScrollListener)
 }
 
 fun RecyclerView.recreateItemViews() {

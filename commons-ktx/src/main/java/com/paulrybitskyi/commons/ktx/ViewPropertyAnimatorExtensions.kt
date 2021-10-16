@@ -46,5 +46,6 @@ inline fun ViewPropertyAnimator.setListener(
         override fun onAnimationEnd(animator: Animator) = onEnd(animator)
         override fun onAnimationCancel(animator: Animator) = onCancel(animator)
         override fun onAnimationStart(animator: Animator) = onStart(animator)
-    }.let(::setListener)
+    }
+    .let(::setListener)
 }

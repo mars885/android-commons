@@ -39,7 +39,6 @@ class RecyclerViewScrollListener constructor(
     private var child: View? = null
 
     enum class Direction {
-
         UNSPECIFIED,
         UPWARDS,
         DOWNWARDS
@@ -74,8 +73,10 @@ class RecyclerViewScrollListener constructor(
     }
 
     private fun isBottomReached(): Boolean {
-        return (lastVisiblePosition == (totalItemCount - 1)) &&
+        return (
+            (lastVisiblePosition == (totalItemCount - 1)) &&
             ((lastVisiblePosition != previousLastVisiblePosition) || shouldNotifyOnReachingEnds())
+        )
     }
 
     private fun onBottomReached(recyclerView: RecyclerView) {
@@ -112,8 +113,10 @@ class RecyclerViewScrollListener constructor(
     }
 
     private fun isTopReached(): Boolean {
-        return (firstVisiblePosition == 0) &&
+        return (
+            (firstVisiblePosition == 0) &&
             ((firstVisiblePosition != previousFirstVisiblePosition) || shouldNotifyOnReachingEnds())
+        )
     }
 
     private fun onTopReached(recyclerView: RecyclerView) {

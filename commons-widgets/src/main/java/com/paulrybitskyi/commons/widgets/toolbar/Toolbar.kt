@@ -343,8 +343,10 @@ class Toolbar @JvmOverloads constructor(
     }
 
     private fun checkNewTitleGravity(newTitleGravity: TitleGravity) {
-        val canNotAssignNewTitleGravity = areBothRightButtonsVisible &&
+        val canNotAssignNewTitleGravity = (
+            areBothRightButtonsVisible &&
             (newTitleGravity != TitleGravity.LEFT)
+        )
 
         if (canNotAssignNewTitleGravity) {
             throw IllegalStateException(

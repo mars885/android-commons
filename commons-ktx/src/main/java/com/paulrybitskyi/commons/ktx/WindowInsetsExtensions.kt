@@ -191,7 +191,6 @@ fun WindowInsets.getCompatSystemWindowInsetBottom(): Int {
 }
 
 enum class DimensionSnapshotType {
-
     MARGINS,
     PADDING
 }
