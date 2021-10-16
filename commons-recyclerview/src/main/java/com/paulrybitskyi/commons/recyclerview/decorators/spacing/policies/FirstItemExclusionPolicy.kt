@@ -25,5 +25,4 @@ class FirstItemExclusionPolicy : SpacingItemDecorator.ItemExclusionPolicy {
     override fun shouldExclude(view: View, parent: RecyclerView): Boolean {
         return (parent.getChildAdapterPosition(view) == 0)
     }
-
 }

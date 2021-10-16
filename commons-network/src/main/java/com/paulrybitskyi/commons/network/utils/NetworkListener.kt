@@ -23,5 +23,4 @@ interface NetworkListener {
     fun onNetworkConnected(networkType: NetworkType)
 
     fun onNetworkDisconnected(networkType: NetworkType)
-
 }

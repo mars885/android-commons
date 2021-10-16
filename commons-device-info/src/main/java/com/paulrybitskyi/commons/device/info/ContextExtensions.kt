@@ -24,16 +24,15 @@ import android.os.Build
 import android.util.DisplayMetrics
 import com.paulrybitskyi.commons.device.info.model.DeviceInfo
 import com.paulrybitskyi.commons.device.info.model.ProductInfo
-import com.paulrybitskyi.commons.device.info.model.screen.ScreenMetrics
-import com.paulrybitskyi.commons.device.info.model.screen.ScreenScalingFactors
 import com.paulrybitskyi.commons.device.info.model.screen.ScreenDensity.Companion.asScreenDensity
 import com.paulrybitskyi.commons.device.info.model.screen.ScreenDimension
+import com.paulrybitskyi.commons.device.info.model.screen.ScreenMetrics
+import com.paulrybitskyi.commons.device.info.model.screen.ScreenScalingFactors
 import com.paulrybitskyi.commons.device.info.model.screen.ScreenSizeCategory
 import com.paulrybitskyi.commons.device.info.model.screen.ScreenSizeCategory.Companion.asScreenSizeCategory
 import com.paulrybitskyi.commons.ktx.configuration
 import com.paulrybitskyi.commons.ktx.displayMetrics
 import com.paulrybitskyi.commons.ktx.pxToDp
-
 
 val Context.deviceInfo: DeviceInfo
     get() = DeviceInfo(
@@ -58,14 +57,12 @@ val Context.screenMetrics: ScreenMetrics
         smallestWidthInDp = configuration.smallestScreenWidthDp
     )
 
-
 private fun DisplayMetrics.getScreenWidth(context: Context): ScreenDimension {
     return ScreenDimension(
         sizeInPixels = widthPixels,
         sizeInDp = widthPixels.toFloat().pxToDp(context)
     )
 }
-
 
 private fun DisplayMetrics.getScreenHeight(context: Context): ScreenDimension {
     return ScreenDimension(
@@ -74,14 +71,12 @@ private fun DisplayMetrics.getScreenHeight(context: Context): ScreenDimension {
     )
 }
 
-
 private fun DisplayMetrics.getScreenScalingFactors(): ScreenScalingFactors {
     return ScreenScalingFactors(
         pixelScalingFactor = density,
         textPixelScalingFactor = scaledDensity
     )
 }
-
 
 private fun Configuration.getScreenSizeCategory(): ScreenSizeCategory {
     return (screenLayout and Configuration.SCREENLAYOUT_SIZE_MASK).asScreenSizeCategory()

@@ -22,7 +22,6 @@ import android.graphics.drawable.Drawable
 import android.view.Menu
 import android.view.MenuItem
 
-
 fun Menu.addItem(
     id: Int,
     title: CharSequence,
@@ -36,5 +35,5 @@ fun Menu.addItem(
         order,
         title
     )
-    .apply { this.icon = icon }
+        .apply { this.icon = icon }
 }

@@ -19,17 +19,15 @@
 package com.paulrybitskyi.commons.ktx
 
 import android.graphics.Color
-import java.util.*
-
+import java.util.Locale
 
 val String.isColor: Boolean
     get() = try {
         Color.parseColor(this)
         true
-    } catch(ignore: Throwable) {
+    } catch (ignore: Throwable) {
         false
     }
-
 
 /**
  * Truncates the string to the specified limit with the option
@@ -41,13 +39,12 @@ val String.isColor: Boolean
  * @return The truncated string
  */
 fun String.truncate(characterLimit: Int, ellipsize: Boolean = true): String {
-    if(isBlank() || (length <= characterLimit)) {
+    if (isBlank() || (length <= characterLimit)) {
         return this
     }
 
-    return (substring(0, characterLimit) + (if(ellipsize) "…" else ""))
+    return (substring(0, characterLimit) + (if (ellipsize) "…" else ""))
 }
-
 
 /**
  * Capitalizes the first letter of the string.
@@ -57,7 +54,7 @@ fun String.truncate(characterLimit: Int, ellipsize: Boolean = true): String {
  * @return The capitalized string
  */
 fun String.capitalize(locale: Locale): String {
-    if(isBlank()) {
+    if (isBlank()) {
         return this
     }
 

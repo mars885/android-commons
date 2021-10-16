@@ -24,15 +24,13 @@ import com.paulrybitskyi.commons.listeners.adapters.TextWatcherAdapter
  */
 class QueryListener(private val callback: Callback) : TextWatcherAdapter {
 
-
     override fun onTextChanged(text: CharSequence, start: Int, before: Int, count: Int) {
-        if(text.isNotEmpty()) {
+        if (text.isNotEmpty()) {
             callback.onQueryEntered(text.toString())
         } else {
             callback.onQueryRemoved()
         }
     }
-
 
     /**
      * A helper callback to get notified when a query is entered or removed.
@@ -50,8 +48,5 @@ class QueryListener(private val callback: Callback) : TextWatcherAdapter {
          * Gets called whenever a query is removed.
          */
         fun onQueryRemoved()
-
     }
-
-
 }

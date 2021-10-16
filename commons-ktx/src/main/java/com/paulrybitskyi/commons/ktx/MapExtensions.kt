@@ -18,9 +18,8 @@
 
 package com.paulrybitskyi.commons.ktx
 
-
 fun <K, V> Map<K, V>.get(key: K, default: V): V {
-    return if(containsKey(key)) {
+    return if (containsKey(key)) {
         (get(key) ?: default)
     } else {
         default

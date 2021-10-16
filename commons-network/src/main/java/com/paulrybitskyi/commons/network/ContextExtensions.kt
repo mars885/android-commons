@@ -36,7 +36,6 @@ import com.paulrybitskyi.commons.network.utils.NetworkListener
 import com.paulrybitskyi.commons.network.utils.NetworkTypeProvider
 import com.paulrybitskyi.commons.network.utils.NewNetworkTypeProvider
 
-
 @get:Suppress("DEPRECATION")
 @get:RequiresPermission(Manifest.permission.ACCESS_NETWORK_STATE)
 val Context.isConnectedToNetwork: Boolean
@@ -57,7 +56,7 @@ val Context.activeNetworkType: NetworkType
 val Context.networkTypeProvider: NetworkTypeProvider
     get() = getSystemService<ConnectivityManager>()
         .let { connectivityManager ->
-            if(SdkInfo.IS_AT_LEAST_MARSHMALLOW) {
+            if (SdkInfo.IS_AT_LEAST_MARSHMALLOW) {
                 NewNetworkTypeProvider(connectivityManager)
             } else {
                 LegacyNetworkTypeProvider(connectivityManager)
@@ -72,7 +71,6 @@ val Context.networkInfo: NetworkInfo
         activeNetworkType = activeNetworkType
     )
 
-
 @RequiresPermission(Manifest.permission.ACCESS_NETWORK_STATE)
 fun Context.registerNetworkListener(
     networkListener: NetworkListener
@@ -82,7 +80,6 @@ fun Context.registerNetworkListener(
         networkListener = networkListener
     )
 }
-
 
 @RequiresPermission(Manifest.permission.ACCESS_NETWORK_STATE)
 fun Context.registerNetworkListener(
@@ -99,7 +96,6 @@ fun Context.registerNetworkListener(
         .let { networkCallback }
 }
 
-
 @RequiresPermission(Manifest.permission.ACCESS_NETWORK_STATE)
 inline fun Context.registerNetworkListener(
     crossinline onNetworkConnected: (NetworkType) -> Unit = {},
@@ -109,11 +105,9 @@ inline fun Context.registerNetworkListener(
 
         override fun onNetworkConnected(networkType: NetworkType) = onNetworkConnected(networkType)
         override fun onNetworkDisconnected(networkType: NetworkType) = onNetworkDisconnected(networkType)
-
     }
-    .let(::registerNetworkListener)
+        .let(::registerNetworkListener)
 }
-
 
 private fun buildDefaultNetworkRequest(): NetworkRequest {
     return NetworkRequest.Builder()

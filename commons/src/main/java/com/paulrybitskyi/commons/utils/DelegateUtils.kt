@@ -19,7 +19,6 @@ package com.paulrybitskyi.commons.utils
 import kotlin.properties.Delegates
 import kotlin.properties.ReadWriteProperty
 
-
 fun <T> observeChanges(
     initialValue: T,
     onChange: (oldValue: T, newValue: T) -> Unit
@@ -28,7 +27,6 @@ fun <T> observeChanges(
         onChange(oldValue, newValue)
     }
 }
-
 
 fun <T> vetoable(
     initialValue: T,

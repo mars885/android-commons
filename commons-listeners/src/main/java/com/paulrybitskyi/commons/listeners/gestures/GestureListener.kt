@@ -25,13 +25,11 @@ import android.view.MotionEvent
  */
 class GestureListener(private val callback: Callback) : GestureDetector.SimpleOnGestureListener() {
 
-
     override fun onSingleTapConfirmed(event: MotionEvent): Boolean {
         callback.onSingleTap(event)
 
         return super.onSingleTapConfirmed(event)
     }
-
 
     override fun onDoubleTap(event: MotionEvent): Boolean {
         callback.onDoubleTap(event)
@@ -39,9 +37,12 @@ class GestureListener(private val callback: Callback) : GestureDetector.SimpleOn
         return super.onDoubleTap(event)
     }
 
-
-    override fun onFling(startEvent: MotionEvent, endEvent: MotionEvent,
-                         velocityX: Float, velocityY: Float): Boolean {
+    override fun onFling(
+        startEvent: MotionEvent,
+        endEvent: MotionEvent,
+        velocityX: Float,
+        velocityY: Float
+    ): Boolean {
         callback.onFling(startEvent, endEvent)
 
         val deltaX = (startEvent.x - endEvent.x)
@@ -53,32 +54,29 @@ class GestureListener(private val callback: Callback) : GestureDetector.SimpleOn
         return super.onFling(startEvent, endEvent, velocityX, velocityY)
     }
 
-
     private fun detectHorizontalSwipes(
         deltaX: Float,
         startEvent: MotionEvent,
         endEvent: MotionEvent
     ) {
-        if(deltaX > 0f) {
+        if (deltaX > 0f) {
             callback.onSwipedToLeft(startEvent, endEvent)
         } else {
             callback.onSwipedToRight(startEvent, endEvent)
         }
     }
 
-
     private fun detectVerticalSwipes(
         deltaY: Float,
         startEvent: MotionEvent,
         endEvent: MotionEvent
     ) {
-        if(deltaY > 0f) {
+        if (deltaY > 0f) {
             callback.onSwipedToTop(startEvent, endEvent)
         } else {
             callback.onSwipedToBottom(startEvent, endEvent)
         }
     }
-
 
     interface Callback {
 
@@ -95,8 +93,5 @@ class GestureListener(private val callback: Callback) : GestureDetector.SimpleOn
         fun onSwipedToTop(startEvent: MotionEvent, endEvent: MotionEvent)
 
         fun onSwipedToBottom(startEvent: MotionEvent, endEvent: MotionEvent)
-
     }
-
-
 }

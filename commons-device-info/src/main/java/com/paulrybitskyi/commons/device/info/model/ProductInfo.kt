@@ -24,5 +24,4 @@ data class ProductInfo(
 
     val name: String
         get() = "$modelName $productName $manufacturerName"
-
 }

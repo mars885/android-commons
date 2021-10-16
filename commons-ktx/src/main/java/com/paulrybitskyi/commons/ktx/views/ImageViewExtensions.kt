@@ -22,9 +22,8 @@ import android.widget.ImageView
 import androidx.annotation.ColorInt
 import com.paulrybitskyi.commons.ktx.setColor
 
-
 fun ImageView.setColor(@ColorInt color: Int) {
-    if(drawable != null) {
+    if (drawable != null) {
         setImageDrawable(drawable?.setColor(color))
     }
 }

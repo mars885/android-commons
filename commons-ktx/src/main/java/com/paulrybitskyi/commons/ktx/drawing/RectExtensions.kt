@@ -21,7 +21,6 @@ package com.paulrybitskyi.commons.ktx.drawing
 import android.graphics.Rect
 import android.graphics.RectF
 
-
 val Rect.halfWidth: Int
     get() = (width() / 2)
 
@@ -34,7 +33,6 @@ val RectF.halfWidth: Float
 val RectF.halfHeight: Float
     get() = (height() / 2f)
 
-
 fun Rect.setBounds(
     left: Int = this.left,
     top: Int = this.top,
@@ -43,7 +41,6 @@ fun Rect.setBounds(
 ) {
     set(left, top, right, bottom)
 }
-
 
 fun RectF.setBounds(
     left: Float = this.left,

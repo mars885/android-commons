@@ -44,7 +44,6 @@ class InfoView @JvmOverloads constructor(
     defStyleAttr: Int = 0
 ) : LinearLayout(context, attrs, defStyleAttr) {
 
-
     private val binding = ViewInfoBinding.inflate(context.layoutInflater, this)
 
     var isTitleTextOneLiner: Boolean = false
@@ -113,7 +112,7 @@ class InfoView @JvmOverloads constructor(
         get() = binding.descriptionTv.typeface
 
     var titleText: CharSequence
-        set(value) { binding.titleTv.text = value}
+        set(value) { binding.titleTv.text = value }
         get() = binding.titleTv.text
 
     var descriptionText: CharSequence
@@ -127,14 +126,12 @@ class InfoView @JvmOverloads constructor(
         set(value) { binding.iconIv.setImageDrawable(value?.setColor(iconColor)) }
         get() = binding.iconIv.drawable
 
-
     init {
         orientation = VERTICAL
         gravity = Gravity.CENTER
 
         attrs?.let { extractAttributes(it, defStyleAttr) }
     }
-
 
     private fun extractAttributes(attrs: AttributeSet, defStyleAttr: Int) {
         context.withStyledAttributes(
@@ -167,6 +164,4 @@ class InfoView @JvmOverloads constructor(
             descriptionText = getString(R.styleable.InfoView_infoView_descriptionText, descriptionText)
         }
     }
-
-
 }

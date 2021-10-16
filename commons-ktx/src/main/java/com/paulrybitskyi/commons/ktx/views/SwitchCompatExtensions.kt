@@ -24,11 +24,9 @@ import androidx.appcompat.widget.SwitchCompat
 import androidx.core.graphics.drawable.DrawableCompat
 import com.paulrybitskyi.commons.ktx.withHalfAlpha
 
-
 fun SwitchCompat.setColor(@ColorInt color: Int) {
     setColors(color, color, color, color)
 }
-
 
 fun SwitchCompat.setColors(
     @ColorInt deactivatedPointerColor: Int,

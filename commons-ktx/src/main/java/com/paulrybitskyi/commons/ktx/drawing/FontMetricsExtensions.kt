@@ -20,7 +20,6 @@ package com.paulrybitskyi.commons.ktx.drawing
 
 import android.graphics.Paint
 
-
 val Paint.FontMetrics.recommendedHeight: Float
     get() = (descent - ascent)
 

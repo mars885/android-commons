@@ -20,7 +20,6 @@ package com.paulrybitskyi.commons.ktx.views
 
 import androidx.viewpager.widget.ViewPager
 
-
 inline fun ViewPager.addOnPageChangeListener(
     crossinline onPageSelected: (position: Int) -> Unit = {},
     crossinline onPageScrollStateChanged: (state: Int) -> Unit = {},
@@ -41,7 +40,6 @@ inline fun ViewPager.addOnPageChangeListener(
         ) {
             onPageScrolled(position, positionOffset, positionOffsetPixels)
         }
-
     }
-    .also(::addOnPageChangeListener)
+        .also(::addOnPageChangeListener)
 }

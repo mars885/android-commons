@@ -27,7 +27,6 @@ open class SpacingItemDecorator @JvmOverloads constructor(
     protected val itemExclusionPolicies: List<ItemExclusionPolicy> = listOf()
 ) : RecyclerView.ItemDecoration() {
 
-
     companion object {
 
         const val SIDE_LEFT = 0b0001
@@ -35,20 +34,17 @@ open class SpacingItemDecorator @JvmOverloads constructor(
         const val SIDE_RIGHT = 0b0100
         const val SIDE_BOTTOM = 0b1000
         const val SIDE_ALL = 0b1111
-
     }
-
 
     constructor(
         spacing: Int,
         sideFlags: Int,
         itemExclusionPolicy: ItemExclusionPolicy
-    ): this(
+    ) : this(
         spacing = spacing,
         sideFlags = sideFlags,
         itemExclusionPolicies = listOf(itemExclusionPolicy)
     )
-
 
     override fun getItemOffsets(
         outRect: Rect,
@@ -56,38 +52,33 @@ open class SpacingItemDecorator @JvmOverloads constructor(
         parent: RecyclerView,
         state: RecyclerView.State
     ) {
-        for(itemExclusionPolicy in itemExclusionPolicies) {
-            if(itemExclusionPolicy.shouldExclude(view, parent)) {
+        for (itemExclusionPolicy in itemExclusionPolicies) {
+            if (itemExclusionPolicy.shouldExclude(view, parent)) {
                 return
             }
         }
 
-        if(sideFlags.containsBits(SIDE_LEFT) && shouldAssignSpacing(view, parent)) {
+        if (sideFlags.containsBits(SIDE_LEFT) && shouldAssignSpacing(view, parent)) {
             outRect.left = spacing
         }
 
-        if(sideFlags.containsBits(SIDE_TOP) && shouldAssignSpacing(view, parent)) {
+        if (sideFlags.containsBits(SIDE_TOP) && shouldAssignSpacing(view, parent)) {
             outRect.top = spacing
         }
 
-        if(sideFlags.containsBits(SIDE_RIGHT) && shouldAssignSpacing(view, parent)) {
+        if (sideFlags.containsBits(SIDE_RIGHT) && shouldAssignSpacing(view, parent)) {
             outRect.right = spacing
         }
 
-        if(sideFlags.containsBits(SIDE_BOTTOM) && shouldAssignSpacing(view, parent)) {
+        if (sideFlags.containsBits(SIDE_BOTTOM) && shouldAssignSpacing(view, parent)) {
             outRect.bottom = spacing
         }
     }
 
-
     open fun shouldAssignSpacing(view: View, parent: RecyclerView): Boolean = true
-
 
     interface ItemExclusionPolicy {
 
         fun shouldExclude(view: View, parent: RecyclerView): Boolean
-
     }
-
-
 }

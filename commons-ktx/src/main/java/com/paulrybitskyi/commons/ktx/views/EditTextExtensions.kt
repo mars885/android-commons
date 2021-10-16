@@ -26,7 +26,6 @@ import android.widget.TextView
 import androidx.core.widget.doOnTextChanged
 import com.paulrybitskyi.commons.SdkInfo
 
-
 val EditText.isEmpty: Boolean
     get() = content.isEmpty()
 
@@ -36,7 +35,6 @@ val EditText.content: String
 var EditText.isEditingEnabled: Boolean
     set(value) { isFocusable = value }
     get() = isFocusable
-
 
 /**
  * Sets a cursor drawable of the EditText.
@@ -51,7 +49,7 @@ var EditText.isEditingEnabled: Boolean
  */
 @SuppressLint("SoonBlockedPrivateApi", "DiscouragedPrivateApi")
 fun EditText.setCursorDrawable(drawable: Drawable) {
-    if(SdkInfo.IS_AT_LEAST_PIE) {
+    if (SdkInfo.IS_AT_LEAST_PIE) {
         return
     }
 
@@ -75,7 +73,6 @@ fun EditText.setCursorDrawable(drawable: Drawable) {
         // Ignore
     }
 }
-
 
 inline fun EditText.onTextChanged(crossinline callback: (String) -> Unit): TextWatcher {
     return doOnTextChanged { text, _, _, _ ->

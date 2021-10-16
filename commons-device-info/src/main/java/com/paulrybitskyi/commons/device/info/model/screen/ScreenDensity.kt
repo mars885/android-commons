@@ -21,7 +21,6 @@ enum class ScreenDensity(
     val group: ScreenDensityGroup
 ) {
 
-
     UNDEFINED(
         dpi = -1,
         group = ScreenDensityGroup.UNDEFINED
@@ -116,7 +115,6 @@ enum class ScreenDensity(
         group = ScreenDensityGroup.XXXHIGH
     );
 
-
     companion object {
 
         @JvmName("forDpi")
@@ -125,8 +123,5 @@ enum class ScreenDensity(
             return values().find { it.dpi == this }
                 ?: UNDEFINED
         }
-
     }
-
-
 }

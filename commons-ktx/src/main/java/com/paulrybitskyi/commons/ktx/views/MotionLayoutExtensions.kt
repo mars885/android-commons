@@ -21,16 +21,14 @@ package com.paulrybitskyi.commons.ktx.views
 import androidx.constraintlayout.motion.widget.MotionLayout
 import androidx.constraintlayout.widget.ConstraintSet
 
-
 inline fun MotionLayout.updateConstraintSets(action: (Int, ConstraintSet) -> Unit) {
-    for(constraintSetId in constraintSetIds) {
+    for (constraintSetId in constraintSetIds) {
         updateState(
             constraintSetId,
             getConstraintSet(constraintSetId).also { action(constraintSetId, it) }
         )
     }
 }
-
 
 inline fun MotionLayout.addTransitionListener(
     crossinline onTransitionStarted: (startId: Int, endId: Int) -> Unit = { _, _ -> },
@@ -60,7 +58,6 @@ inline fun MotionLayout.addTransitionListener(
         ) {
             onTransitionTrigger(triggerId, positive, progress)
         }
-
     }
-    .also(::addTransitionListener)
+        .also(::addTransitionListener)
 }

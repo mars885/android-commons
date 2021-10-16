@@ -25,5 +25,4 @@ interface OnSeekBarChangeListenerAdapter : SeekBar.OnSeekBarChangeListener {
     override fun onStartTrackingTouch(seekBar: SeekBar) {}
 
     override fun onStopTrackingTouch(seekBar: SeekBar) {}
-
 }

@@ -33,5 +33,4 @@ class GestureCallbackAdapter : GestureListener.Callback {
     override fun onSwipedToTop(startEvent: MotionEvent, endEvent: MotionEvent) {}
 
     override fun onSwipedToBottom(startEvent: MotionEvent, endEvent: MotionEvent) {}
-
 }

@@ -31,20 +31,16 @@ import androidx.annotation.RequiresApi
 import androidx.annotation.RequiresPermission
 import com.paulrybitskyi.commons.network.model.NetworkType
 
-
 interface NetworkTypeProvider {
 
     fun getActiveNetworkType(): NetworkType
 
     fun getNetworkType(network: Network): NetworkType
-    
 }
-
 
 internal class NewNetworkTypeProvider(
     private val connectivityManager: ConnectivityManager
 ) : NetworkTypeProvider {
-
 
     @RequiresPermission(Manifest.permission.ACCESS_NETWORK_STATE)
     @RequiresApi(Build.VERSION_CODES.M)
@@ -54,12 +50,10 @@ internal class NewNetworkTypeProvider(
             ?: NetworkType.UNDEFINED
     }
 
-
     @RequiresPermission(Manifest.permission.ACCESS_NETWORK_STATE)
     override fun getNetworkType(network: Network): NetworkType {
         return network.toNetworkType()
     }
-
 
     @RequiresPermission(Manifest.permission.ACCESS_NETWORK_STATE)
     private fun Network.toNetworkType(): NetworkType {
@@ -73,16 +67,12 @@ internal class NewNetworkTypeProvider(
             else -> NetworkType.UNDEFINED
         }
     }
-    
-    
 }
-
 
 @Suppress("DEPRECATION")
 internal class LegacyNetworkTypeProvider(
     private val connectivityManager: ConnectivityManager
 ) : NetworkTypeProvider {
-
 
     @RequiresPermission(Manifest.permission.ACCESS_NETWORK_STATE)
     override fun getActiveNetworkType(): NetworkType {
@@ -91,7 +81,6 @@ internal class LegacyNetworkTypeProvider(
             ?: NetworkType.UNDEFINED
     }
 
-
     @RequiresPermission(Manifest.permission.ACCESS_NETWORK_STATE)
     override fun getNetworkType(network: Network): NetworkType {
         return connectivityManager.getNetworkInfo(network)
@@ -99,9 +88,8 @@ internal class LegacyNetworkTypeProvider(
             ?: NetworkType.UNDEFINED
     }
 
-
     private fun NetworkInfo.toNetworkType(): NetworkType {
-        return when(type) {
+        return when (type) {
             TYPE_WIFI -> NetworkType.WIFI
             TYPE_MOBILE -> NetworkType.CELLULAR
             TYPE_ETHERNET -> NetworkType.ETHERNET
@@ -109,6 +97,4 @@ internal class LegacyNetworkTypeProvider(
             else -> NetworkType.UNDEFINED
         }
     }
-    
-    
 }

@@ -20,14 +20,13 @@ package com.paulrybitskyi.commons.window.anims
 
 import android.app.Activity
 
-
 /**
  * Overrides the animations of the entering window.
  *
  * @param windowAnimations The animations to use for the entering window
  */
 fun Activity.overrideEnterTransition(windowAnimations: WindowAnimations) {
-    if(windowAnimations.id == WindowAnimations.DEFAULT_ANIMATIONS.id) {
+    if (windowAnimations.id == WindowAnimations.DEFAULT_ANIMATIONS.id) {
         return
     }
 
@@ -37,14 +36,13 @@ fun Activity.overrideEnterTransition(windowAnimations: WindowAnimations) {
     )
 }
 
-
 /**
  * Overrides the animations of the exiting window.
  *
  * @param windowAnimations The animations to use for the exiting window
  */
 fun Activity.overrideExitTransition(windowAnimations: WindowAnimations) {
-    if(windowAnimations.id == WindowAnimations.DEFAULT_ANIMATIONS.id) {
+    if (windowAnimations.id == WindowAnimations.DEFAULT_ANIMATIONS.id) {
         return
     }
 

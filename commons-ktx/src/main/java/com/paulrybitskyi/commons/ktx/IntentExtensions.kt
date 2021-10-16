@@ -23,11 +23,9 @@ import android.content.Intent
 import android.os.Bundle
 import android.os.Parcelable
 
-
 fun Intent.getStringExtra(key: String, default: String): String {
     return (getStringExtra(key) ?: default)
 }
-
 
 fun Intent.getStringExtraOrThrow(key: String): String {
     return checkNotNull(getStringExtra(key)) {
@@ -35,11 +33,9 @@ fun Intent.getStringExtraOrThrow(key: String): String {
     }
 }
 
-
 fun Intent.getBundleExtra(key: String, default: Bundle): Bundle {
     return (getBundleExtra(key) ?: default)
 }
-
 
 fun Intent.getBundleExtraOrThrow(key: String): Bundle {
     return checkNotNull(getBundleExtra(key)) {
@@ -47,11 +43,9 @@ fun Intent.getBundleExtraOrThrow(key: String): Bundle {
     }
 }
 
-
 fun <T> Intent.getSerializableExtra(key: String, default: T): T {
     return ((getSerializableExtra(key) as? T) ?: default)
 }
-
 
 fun <T : Any> Intent.getSerializableExtraOrThrow(key: String): T {
     return checkNotNull(getSerializableExtra(key) as? T) {
@@ -59,11 +53,9 @@ fun <T : Any> Intent.getSerializableExtraOrThrow(key: String): T {
     }
 }
 
-
 fun <T : Parcelable> Intent.getParcelableExtra(key: String, default: T): T {
     return (getParcelableExtra(key) ?: default)
 }
-
 
 fun <T : Parcelable> Intent.getParcelableOrThrow(key: String): T {
     return checkNotNull(getParcelableExtra(key)) {
@@ -71,26 +63,21 @@ fun <T : Parcelable> Intent.getParcelableOrThrow(key: String): T {
     }
 }
 
-
 fun Intent.singleTop(): Intent = apply {
     addFlags(Intent.FLAG_ACTIVITY_SINGLE_TOP)
 }
-
 
 fun Intent.newTask(): Intent = apply {
     addFlags(Intent.FLAG_ACTIVITY_NEW_TASK)
 }
 
-
 fun Intent.multipleTask(): Intent = apply {
     addFlags(Intent.FLAG_ACTIVITY_MULTIPLE_TASK)
 }
 
-
 fun Intent.clearTop(): Intent = apply {
     addFlags(Intent.FLAG_ACTIVITY_CLEAR_TOP)
 }
-
 
 fun Intent.clearTask(): Intent = apply {
     addFlags(Intent.FLAG_ACTIVITY_CLEAR_TASK)
