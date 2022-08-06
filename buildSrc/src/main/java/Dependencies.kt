@@ -20,8 +20,8 @@ import org.gradle.api.JavaVersion
 
 object appConfig {
 
-    const val compileSdkVersion = 30
-    const val targetSdkVersion = 30
+    const val compileSdkVersion = 32
+    const val targetSdkVersion = 32
     const val minSdkVersion = 21
     const val applicationId = "com.paulrybitskyi.commons.sample"
 
@@ -31,21 +31,21 @@ object appConfig {
 
 object versions {
 
-    const val kotlin = "1.5.31" // also in buildSrc build.gradle.kts file
-    const val gradlePlugin = "7.0.3" // also in buildSrc build.gradle.kts file
-    const val detektPlugin = "1.18.1"
-    const val ktlintPlugin = "10.2.0"
-    const val gradleVersionsPlugin = "0.39.0"
-    const val dokkaPlugin = "1.5.31"
-    const val appCompat = "1.3.1"
-    const val lifecycle = "2.3.1"
-    const val constraintLayout = "2.1.1"
+    const val kotlin = "1.7.0" // also in buildSrc build.gradle.kts file
+    const val gradlePlugin = "7.2.2" // also in buildSrc build.gradle.kts file
+    const val detektPlugin = "1.20.0"
+    const val ktlintPlugin = "10.3.0"
+    const val gradleVersionsPlugin = "0.42.0"
+    const val dokkaPlugin = "1.7.0"
+    const val appCompat = "1.4.2"
+    const val lifecycle = "2.5.1"
+    const val constraintLayout = "2.1.4"
     const val viewPager2 = "1.0.0"
-    const val coreKtx = "1.6.0"
-    const val fragmentKtx = "1.3.6"
+    const val coreKtx = "1.8.0"
+    const val fragmentKtx = "1.5.1"
     const val recyclerView = "1.2.1"
-    const val materialComponents = "1.4.0"
-    const val navigation = "2.3.5"
+    const val materialComponents = "1.6.1"
+    const val navigation = "2.5.1"
 }
 
 object publishingConfig {
